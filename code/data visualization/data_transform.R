@@ -12,10 +12,14 @@ install.packages("tidyverse")
 install.packages("janitor")
 install.packages("feather")
 install.packages("googledrive")
+install.packages("here")
+install.packages("gt")
+
 
 library(tidyverse)
 library(dplyr)
 library(janitor)
+library(gt)
 library(feather)
 library(googledrive) 
 library(readr)
@@ -47,3 +51,7 @@ df1 <- df0 %>%
 df1 <- df1 %>%
   mutate(negative_outcomes = outcome_euthanasia + outcome_deaths + outcome_missing_or_stolen)
 
+
+
+#### Export feather file --------
+write_feather(df1, "data/data_transformed/nkc.feather")
