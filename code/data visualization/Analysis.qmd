@@ -1,0 +1,52 @@
+---
+title: "Colorado Shelter Trends: Multi-Year Data Analysis"
+author: "Your Name"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    theme: cosmo
+    number-sections: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Introduction
+
+-   Purpose of this analysis\
+-   Data sources and time period covered\
+-   Key questions:
+    -   Are transfers affecting negative outcomes?
+    -   Are adoptions and RTOs keeping pace with intake?
+    -   Where are the biggest regional differences?
+
+# Data Overview
+
+## Data Description
+
+-   Overview of data fields (intake, outcomes, transfers, etc.)
+-   Data cleaning and preprocessing steps
+
+```{r}
+# Load libraries and data
+library(tidyverse)
+library(readxl)
+shelter_data <- read_excel("/Users/quunc/Downloads/20251001NKCDataSheet.xlsx")
+glimpse(shelter_data)
+```
+
+## Summary Statistics
+
+-   Total intakes, adoptions, and outcomes by year
+
+```{r}
+shelter_data %>%
+  group_by(Year) %>%
+  summarise(Total_Intake = sum(Intake),
+            Total_Adoptions = sum(Adoptions),
+            Total_Deaths = sum(Deaths))
+```
