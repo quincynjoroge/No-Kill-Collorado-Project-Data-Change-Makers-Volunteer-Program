@@ -35,8 +35,10 @@ execute:
 # Load libraries and data
 library(tidyverse)
 library(readxl)
-shelter_data <- read_excel("/Users/quunc/Downloads/20251001NKCDataSheet.xlsx")
-glimpse(shelter_data)
+library(feather)
+library(here)
+
+df0 <- read_feather(here("data", "data_transformed", "nkc.feather"))
 ```
 
 ## Summary Statistics
@@ -44,9 +46,31 @@ glimpse(shelter_data)
 -   Total intakes, adoptions, and outcomes by year
 
 ```{r}
-shelter_data %>%
-  group_by(Year) %>%
-  summarise(Total_Intake = sum(Intake),
-            Total_Adoptions = sum(Adoptions),
-            Total_Deaths = sum(Deaths))
+df0 %>%
+  group_by(year) %>%
+  summarise(
+    Total_Intake = sum(total_intake, na.rm = TRUE),
+    Total_Adoptions = sum(total_adoption, na.rm = TRUE),
+    Total_Deaths = sum(total_death, na.rm = TRUE)
+  ) %>%
+  gt() %>%
+  tab_header(
+    title = "Shelter Outcomes by Year",
+    subtitle = "Total Intake, Adoptions, and Deaths"
+  ) %>%
+  fmt_number(
+    columns = vars(Total_Intake, Total_Adoptions, Total_Deaths),
+    decimals = 0
+  ) %>%
+  cols_label(
+    Total_Intake = "Total Intake",
+    Total_Adoptions = "Total Adoptions",
+    Total_Deaths = "Total Deaths"
+  ) %>%
+  tab_options(
+    table.font.names = "Arial",
+    heading.align = "center",
+    table.border.top.width = 2,
+    table.border.bottom.width = 2
+  )
 ```
