@@ -74,3 +74,58 @@ df0 %>%
     table.border.bottom.width = 2
   )
 ```
+
+## Transfers vs. Negative Outcomes in Colorado Shelters
+
+This analysis compares the number of pets transferred into Colorado shelters from other states to the number of pets who do not leave shelters alive (euthanasia, died, or missing).
+
+**Key questions explored:**
+
+1. Are transfers outpacing local lifesaving capacity?
+
+2. Do increases in transfers correlate with increases in negative outcomes?
+
+3. Are Colorado shelters absorbing regional transfers without sacrificing local pets?
+
+By visualizing both absolute counts and percentages of total intake over time, we can better understand trends, system capacity, and the impact of transfers on shelter outcomes.
+
+```{r}
+df0 <- df0 %>%
+  mutate(
+    out_of_state_transfers_pct = intake_out_of_state_transfer / total_intake * 100,
+    negative_outcomes_pct = negative_outcomes / total_intake * 100
+  )
+
+ggplot(df0, aes(x = year)) +
+  geom_line(aes(y = out_of_state_transfers_pct, color = "Out of State Transfers (%)"), size = 1.2) +
+  geom_line(aes(y = negative_outcomes_pct, color = "Negative Outcomes (%)"), size = 1.2) +
+  geom_point(aes(y = out_of_state_transfers_pct, color = "Out of State Transfers (%)")) +
+  geom_point(aes(y = negative_outcomes_pct, color = "Negative Outcomes (%)")) +
+  labs(
+    title = "Transfers vs. Negative Outcomes as a Percentage of Total Intake",
+    y = "Percent of Total Intake",
+    x = "Year",
+    color = "Outcome Type"
+  ) +
+  theme_minimal()
+
+
+```
+
+
+
+
+
+```{r}
+ggplot(df0, aes(x = intake_out_of_state_transfer, y = negative_outcomes)) +
+  geom_point(size = 3, alpha = 0.6) +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  labs(
+    title = "Correlation Between Out of state Intake Transfers and Negative Outcomes",
+    x = "Number of Transfers",
+    y = "Number of Negative Outcomes"
+  )
+
+```
+
+
