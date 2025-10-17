@@ -37,7 +37,7 @@ library(tidyverse)
 library(readxl)
 library(feather)
 library(here)
-
+library(patchwork)
 library(tidyverse)
 library(dplyr)
 library(janitor)
@@ -46,6 +46,7 @@ library(feather)
 library(googledrive) 
 library(readr)
 library(readxl)
+library(scales)
 
 df0 <- read_feather(here("data", "data_transformed", "nkc.feather"))
 ```
@@ -98,7 +99,8 @@ This analysis compares the number of pets transferred into Colorado shelters fro
 
 By visualizing both absolute counts and percentages of total intake over time, we can better understand trends, system capacity, and the impact of transfers on shelter outcomes.
 
-
+:::{.panel-tabset .nav-pills}
+## tab 1
 ```{r}
 # aggregate by year
 df_yearly <- df0 %>%
@@ -146,7 +148,7 @@ ggplot(df_indexed, aes(x = year)) +
 
 
 
-
+## tab 2
 ```{r}
 # Calculate correlation
 cor_value <- cor(df0$intake_out_of_state_transfer, df0$negative_outcomes, use = "complete.obs")
@@ -166,6 +168,337 @@ ggplot(df0, aes(x = intake_out_of_state_transfer, y = negative_outcomes)) +
   theme(
     plot.title = element_text(face = "bold", hjust = 0.5),
     plot.subtitle = element_text(hjust = 0.5, color = "gray40")
+  )
+
+```
+
+:::
+
+## Adoption Trends Over Time
+
+Adoption represents the single largest pathway out of shelters for animals, making it the cornerstone of successful shelter operations. This section examines whether Colorado's adoption programs are keeping pace with intake growth, and identifies periods where external factors—economic conditions, public health crises, or targeted campaigns—may have influenced adoption rates.
+
+**Key questions explored:**
+
+1. Are adoption numbers growing, declining, or remaining stable over time?
+2. Is adoption growth keeping pace with increases in shelter intake?
+3. What external factors correlate with spikes or drops in adoption rates?
+4. Are there opportunities to strengthen adoption programs based on historical patterns?
+
+By analyzing both absolute adoption numbers and adoption rates (as a percentage of total intake), we can assess system health and identify periods requiring targeted intervention through marketing campaigns, fee-waived events, or expanded foster networks.
+
+:::{.panel-tabset .nav-pills}
+
+### Total Adoptions (Raw Counts)
+
+```{r}
+# Step 1: Aggregate by year
+df_adoption_trends <- df0 %>%
+  group_by(year) %>%
+  summarise(
+    total_adoptions = sum(total_adoption, na.rm = TRUE),
+    total_intake = sum(total_intake, na.rm = TRUE),
+    .groups = 'drop'
+  ) %>%  
+  mutate(adoption_rate = (total_adoptions / total_intake) * 100)
+
+# Step 2: Plot raw counts
+p1 <- ggplot(df_adoption_trends, aes(x = year, y = total_adoptions)) +
+  geom_line(color = "#2E7D32", size = 1.5) +
+  geom_point(color = "#2E7D32", size = 4) +
+  scale_y_continuous(labels = scales::comma_format()) +
+  scale_x_continuous(breaks = seq(min(df_adoption_trends$year), 
+                                   max(df_adoption_trends$year), by = 1)) +
+  labs(
+    title = "A. Total Adoptions Over Time",
+    x = NULL,
+    y = "Number of Adoptions"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 16),
+    axis.text.x = element_text(angle = 0),
+    panel.grid.minor = element_blank()
+  )
+
+p1
+
+```
+
+
+### Adoption Rate (% of Intake)
+
+
+```{r}
+# Panel B: Adoption rate (% of intake)
+p2 <- ggplot(df_adoption_trends, aes(x = year)) +
+  geom_line(aes(y = adoption_rate), color = "#1565C0", size = 1.5) +
+  geom_point(aes(y = adoption_rate), color = "#1565C0", size = 3) +
+  geom_hline(yintercept = mean(df_adoption_trends$adoption_rate), 
+             linetype = "dashed", color = "gray50", alpha = 0.7) +
+  scale_y_continuous(labels = scales::percent_format(scale = 1)) +
+  scale_x_continuous(breaks = seq(min(df_adoption_trends$year), 
+                                   max(df_adoption_trends$year), by = 1)) +
+  labs(
+    title = "B. Adoption Rate (% of Intake)",
+    x = NULL,
+    y = "Adoption Rate"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(face = "bold"))
+
+p2
+
+```
+
+:::
+
+## Return-to-Owner (RTO) Rates
+
+Return-to-Owner (RTO) rates represent the percentage of stray animals successfully reunited with their owners after entering the shelter system. These rates are a critical measure of how well identification, lost-and-found systems, and community outreach efforts are working to reconnect pets with their families.
+
+**Key Findings**
+
+The analysis compares RTO trends for dogs and cats from 2015 to 2024.
+
+_1.Dogs consistently have much higher RTO rates than cats_
+Over the past decade, approximately 60–70% of stray dogs were returned to their owners each year, while only 10–15% of stray cats were reunited.
+
+_2.The gap remains wide and persistent_
+The “RTO Gap” chart shows dogs outperforming cats by roughly 50–60 percentage points each year. While dog reunification rates have remained stable, cat reunifications show little improvement despite minor year-to-year fluctuations.
+
+_3.Small fluctuations likely reflect local program efforts_
+Slight increases in certain years (e.g., 2018–2019) could be linked to targeted microchipping drives or community education campaigns, but these effects appear temporary or limited in scope.
+
+:::{.panel-tabset .nav-pills}
+## RTO by Year
+```{r}
+# Calculate RTO rates by year and animal category(dog/cat)
+df_rto <- df0 %>%
+  # Filter for relevant animal categories
+  filter(animal_category %in% c("dog", "cat")) %>%
+  group_by(year, animal_category) %>%
+  summarise(
+    total_strays = sum(intake_stray, na.rm = TRUE),
+    total_rto = sum(outcome_return_to_owner, na.rm = TRUE),
+    .groups = 'drop'
+  ) %>%
+  mutate(
+    rto_rate = (total_rto / total_strays) * 100,
+    # For indexed comparison
+    rto_rate = if_else(is.nan(rto_rate) | is.infinite(rto_rate), 0, rto_rate)
+  )
+
+# Visualisation
+
+p_rto_species <- ggplot(df_rto, aes(x = year, y = rto_rate, color = animal_category)) +
+  geom_line(linewidth = 1.5) +
+  geom_point(size = 4) +
+  # Add reference lines for national benchmarks (adjust these values)
+  geom_hline(yintercept = 30, linetype = "dotted", color = "gray50", alpha = 0.6) +
+  annotate("text", x = min(df_rto$year), y = 30, 
+           label = "Target: 30%", vjust = -0.5, hjust = 0, 
+           color = "gray50", size = 3) +
+  scale_color_manual(
+    values = c("dog" = "#1976D2", "cat" = "#D32F2F"),
+    name = "Species"
+  ) +
+  scale_y_continuous(
+    labels = percent_format(scale = 1),
+    limits = c(0, NA),
+    expand = expansion(mult = c(0, 0.1))
+  ) +
+  scale_x_continuous(breaks = seq(min(df_rto$year), max(df_rto$year), by = 1)) +
+  labs(
+    title = "Return-to-Owner Rates: Dogs vs. Cats",
+    subtitle = "Percentage of stray intakes successfully reunited with owners",
+    x = "Year",
+    y = "RTO Rate (% of Stray Intake)",
+    caption = "Higher rates indicate effective identification and reunification programs"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5, size = 16),
+    plot.subtitle = element_text(hjust = 0.5, color = "gray40", size = 11),
+    legend.position = "top",
+    panel.grid.minor = element_blank()
+  )
+
+p_rto_species
+```
+
+## RTO Gap
+```{r}
+# Calculate the gap
+df_rto_gap <- df_rto %>%
+  select(year, animal_category, rto_rate) %>%
+  pivot_wider(names_from = animal_category, values_from = rto_rate) %>%
+  mutate(
+    gap = dog - cat,
+    gap_direction = if_else(gap > 0, "Dogs Higher", "Cats Higher")
+  )
+
+p_gap <- ggplot(df_rto_gap, aes(x = year, y = gap, fill = gap > 0)) +
+  geom_col(width = 0.7) +
+  geom_hline(yintercept = 0, linewidth = 0.8, color = "gray20") +
+  scale_fill_manual(
+    values = c("TRUE" = "#1976D2", "FALSE" = "#D32F2F"),
+    guide = "none"
+  ) +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  scale_x_continuous(breaks = seq(min(df_rto_gap$year), max(df_rto_gap$year), by = 1)) +
+  labs(
+    title = "The RTO Gap: Dog vs. Cat Reunification Rates",
+    subtitle = "Positive values indicate dogs have higher RTO rates than cats",
+    x = "Year",
+    y = "Percentage Point Difference (Dog - Cat)",
+    caption = "Larger gaps suggest opportunities for targeted cat identification programs"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5, color = "gray40", size = 11),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank()
+  )
+
+p_gap
+```
+
+## Summary Statistics
+```{r}
+# Calculate key metrics
+summary_stats <- df_rto %>%
+  group_by(animal_category) %>%
+  summarise(
+    `Average RTO Rate (%)` = mean(rto_rate, na.rm = TRUE),
+    `First Year Rate (%)` = first(rto_rate),
+    `Most Recent Rate (%)` = last(rto_rate),
+    `Overall Change (pp)` = last(rto_rate) - first(rto_rate),
+    `Best Year` = year[which.max(rto_rate)],
+    `Peak Rate (%)` = max(rto_rate, na.rm = TRUE),
+    `Total Animals Returned` = sum(total_rto, na.rm = TRUE),
+    `Total Strays` = sum(total_strays, na.rm = TRUE)
+  )
+
+summary_stats %>%
+  gt() %>%
+  tab_header(
+    title = "Return-to-Owner Performance Summary",
+    subtitle = sprintf("Analysis Period: %d-%d", 
+                      min(df_rto$year), max(df_rto$year))
+  ) %>%
+  fmt_number(
+    columns = c(`Average RTO Rate (%)`, `First Year Rate (%)`, 
+                `Most Recent Rate (%)`, `Overall Change (pp)`, `Peak Rate (%)`),
+    decimals = 1
+  ) %>%
+  fmt_number(
+    columns = c(`Total Animals Returned`, `Total Strays`),
+    decimals = 0,
+    use_seps = TRUE
+  ) %>%
+  tab_style(
+    style = cell_fill(color = "#E3F2FD"),
+    locations = cells_body(rows = animal_category == "dog")
+  ) %>%
+  tab_style(
+    style = cell_fill(color = "#FFEBEE"),
+    locations = cells_body(rows = animal_category == "cat")
+  ) %>%
+  cols_label(
+    animal_category = "Species"
+  ) %>%
+  tab_options(
+    table.font.names = "Arial",
+    heading.align = "center"
+  )
+```
+
+:::
+
+
+## Intake Categories & Shifts Over Time
+
+```{r}
+intake_summary <- df0 %>%
+  group_by(year) %>%
+  summarise(
+    Stray = sum(intake_stray, na.rm = TRUE),
+    Owner_Relinquished = sum(intake_relinquished, na.rm = TRUE),
+    In_State_Transfers = sum(intake_in_state_transfer, na.rm = TRUE),
+    Out_of_State_Transfers = sum(intake_out_of_state_transfer, na.rm = TRUE),
+    Other = sum(intake_other, na.rm = TRUE)
+  ) %>%
+  mutate(Total_Intake = Stray + Owner_Relinquished + In_State_Transfers + Out_of_State_Transfers+Other) %>%
+  pivot_longer(cols = c(Stray, Owner_Relinquished, In_State_Transfers, Out_of_State_Transfers, Other),
+               names_to = "Category", values_to = "Count") %>%
+  mutate(Percent = Count / Total_Intake)
+
+
+# Intake Composition Over Time
+ggplot(intake_summary, aes(x = year, y = Percent, fill = Category)) +
+  geom_area(alpha = 0.8) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  labs(title = "Intake Composition Over Time",
+       y = "Share of Total Intake",
+       x = "Year",
+       fill = "Intake Category",
+       caption = "Data source: Colorado Shelter Statistics") +
+  theme_minimal()
+
+```
+
+## Owner Relinquishments Trend
+
+```{r}
+ggplot(filter(intake_summary, Category == "Owner_Relinquished"),
+       aes(x = year, y = Count)) +
+  geom_line(size = 1.2, color = "#E69F00") +
+  geom_point(size = 3, color = "#E69F00") +
+  labs(title = "Owner Relinquishments Over Time",
+       x = "Year",
+       y = "Number of Owner Relinquished Animals") +
+  theme_minimal()
+```
+
+## Summary Table
+
+```{r}
+# Table highlighting year-over-year percentage changes by intake type
+
+intake_summary %>%
+  group_by(Category) %>%
+  mutate(Yearly_Change = (Count - lag(Count)) / lag(Count)) %>%
+  summarise(
+    Avg_Change = mean(Yearly_Change, na.rm = TRUE)
+  ) %>%
+  arrange(desc(Avg_Change)) %>%
+  mutate(Avg_Change = round(Avg_Change, 2)) %>%
+  gt() %>%
+  fmt_percent(
+    columns = Avg_Change,
+    decimals = 2
+  ) %>%
+  tab_header(
+    title = "Average Yearly Change in Intake by Category"
+  ) %>%
+  cols_label(
+    Category = "Intake Category",
+    Avg_Change = "Average Yearly Change (%)"
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(everything())
+  ) %>%
+  tab_options(
+    table.border.top.width = px(2),
+    table.border.bottom.width = px(2),
+    table.border.top.color = "gray",
+    table.border.bottom.color = "gray",
+    column_labels.border.top.width = px(1),
+    column_labels.border.bottom.width = px(1),
+    data_row.padding = px(8)
   )
 
 ```
