@@ -420,6 +420,10 @@ summary_stats %>%
 
 ## Intake Categories & Shifts Over Time
 
+:::{.panel-tabset .nav-pills}
+
+## Intake composition over time
+
 ```{r}
 intake_summary <- df0 %>%
   group_by(year) %>%
@@ -503,4 +507,8 @@ intake_summary %>%
 
 ```
 
+
+:::
+
+## Positive Outcome Pathways
 
