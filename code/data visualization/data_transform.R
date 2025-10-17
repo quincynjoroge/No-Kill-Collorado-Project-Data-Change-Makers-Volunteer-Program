@@ -39,7 +39,8 @@ df0 <- read_excel("/Users/quunc/Downloads/NKC_data.xlsx")
 df1 <- df0 %>%
   mutate(total_intake = rowSums(across(starts_with("intake_")), na.rm = TRUE),
          total_adoption = outcome_adoption,
-         total_death = outcome_deaths )
+         total_death = outcome_deaths,
+         adoption_rate = (total_adoption / total_intake) * 100)
 
 #### Transform 2 --------
 
@@ -50,7 +51,6 @@ df1 <- df0 %>%
 
 df1 <- df1 %>%
   mutate(negative_outcomes = outcome_euthanasia + outcome_deaths + outcome_missing_or_stolen)
-
 
 
 #### Export feather file --------
