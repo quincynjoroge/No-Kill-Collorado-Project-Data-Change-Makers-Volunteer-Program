@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2025-10-13">
+<meta name="author" content="Quincy Njoroge">
+<meta name="dcterms.date" content="2025-10-19">
 
-<title>Colorado Shelter Trends: Multi-Year Data Analysis</title>
+<title>analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -81,12 +47,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#about-the-project" id="toc-about-the-project" class="nav-link active" data-scroll-target="#about-the-project"><span class="header-section-number">1</span> About the Project</a></li>
   <li><a href="#data-overview" id="toc-data-overview" class="nav-link" data-scroll-target="#data-overview"><span class="header-section-number">2</span> Data Overview</a>
   <ul class="collapse">
   <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">2.1</span> Data Description</a></li>
   <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">2.2</span> Summary Statistics</a></li>
   <li><a href="#transfers-vs.-negative-outcomes-in-colorado-shelters" id="toc-transfers-vs.-negative-outcomes-in-colorado-shelters" class="nav-link" data-scroll-target="#transfers-vs.-negative-outcomes-in-colorado-shelters"><span class="header-section-number">2.3</span> Transfers vs.&nbsp;Negative Outcomes in Colorado Shelters</a></li>
+  <li><a href="#adoption-trends-over-time" id="toc-adoption-trends-over-time" class="nav-link" data-scroll-target="#adoption-trends-over-time"><span class="header-section-number">2.4</span> Adoption Trends Over Time</a></li>
+  <li><a href="#return-to-owner-rto-rates" id="toc-return-to-owner-rto-rates" class="nav-link" data-scroll-target="#return-to-owner-rto-rates"><span class="header-section-number">2.5</span> Return-to-Owner (RTO) Rates</a></li>
+  <li><a href="#intake-categories-shifts-over-time" id="toc-intake-categories-shifts-over-time" class="nav-link" data-scroll-target="#intake-categories-shifts-over-time"><span class="header-section-number">2.6</span> Intake Categories &amp; Shifts Over Time</a></li>
+  <li><a href="#positive-outcome-pathways" id="toc-positive-outcome-pathways" class="nav-link" data-scroll-target="#positive-outcome-pathways"><span class="header-section-number">2.7</span> Positive Outcome Pathways</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -95,7 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Colorado Shelter Trends: Multi-Year Data Analysis</h1>
 </div>
 
 
@@ -105,14 +74,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
+             <p>Quincy Njoroge </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 13, 2025</p>
+      <p class="date">October 19, 2025</p>
     </div>
   </div>
   
@@ -124,20 +93,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<ul>
-<li>Purpose of this analysis<br>
-</li>
-<li>Data sources and time period covered<br>
-</li>
-<li>Key questions:
-<ul>
-<li>Are transfers affecting negative outcomes?</li>
-<li>Are adoptions and RTOs keeping pace with intake?</li>
-<li>Where are the biggest regional differences?</li>
-</ul></li>
-</ul>
+<div style="display:flex; align-items:center; justify-content:space-between;">
+<img src="NKC_COlogoWeb.jpg" alt="Logo" style="height:80px; margin-right:20px;">
+<h1 style="margin:0;">
+Colorado Shelter Trends: Multi-Year Data Analysis
+</h1>
+</div>
+<section id="about-the-project" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> About the Project</h1>
+<p>Every year, hundreds of animal shelters and rescues across Colorado open their doors to thousands of pets in need. Behind each of these numbers lies a story of compassion, survival, and the ongoing effort to create a future where every healthy and treatable animal has the chance to live. No Kill Colorado stands at the heart of this mission.</p>
+<p>As a nonprofit animal welfare advocacy organization, No Kill Colorado is dedicated to driving systemic change through advocacy, education, and data-driven reform. Rather than operating as a shelter, it works to transform how the entire shelter system performs helping communities, policymakers, and organizations adopt humane, lifesaving practices inspired by the No Kill Equation.</p>
+<p>To strengthen this mission, the organization launched the <strong>Data for Paws project</strong> an initiative designed to turn raw shelter data from 2016 to 2024 into meaningful insights. This project transforms data into visual stories that shed light on shelter performance, highlight progress, and reveal opportunities for further improvement.</p>
+<p>Through this analysis, No Kill Colorado aims to:</p>
+<ol type="1">
+<li><p>Communicate key trends and metrics that influence animal welfare outcomes.</p></li>
+<li><p>Increase the organization’s visibility as a leader in data-driven advocacy.</p></li>
+<li><p>Equip policymakers, journalists, and the public with transparent, actionable information.</p></li>
+</ol>
 </section>
 <section id="data-overview" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Data Overview</h1>
@@ -147,27 +119,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Overview of data fields (intake, outcomes, transfers, etc.)</li>
 <li>Data cleaning and preprocessing steps</li>
 </ul>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries and data</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(feather)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(feather)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(googledrive) </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>df0 <span class="ot">&lt;-</span> <span class="fu">read_feather</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"data_transformed"</span>, <span class="st">"nkc.feather"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 </section>
 <section id="summary-statistics" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">2.2</span> Summary Statistics</h2>
@@ -175,54 +126,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Total intakes, adoptions, and outcomes by year</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df0 <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_Intake =</span> <span class="fu">sum</span>(total_intake, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_Adoptions =</span> <span class="fu">sum</span>(total_adoption, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_Deaths =</span> <span class="fu">sum</span>(total_death, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Shelter Outcomes by Year"</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Total Intake, Adoptions, and Deaths"</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">vars</span>(Total_Intake, Total_Adoptions, Total_Deaths),</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_Intake =</span> <span class="st">"Total Intake"</span>,</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_Adoptions =</span> <span class="st">"Total Adoptions"</span>,</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_Deaths =</span> <span class="st">"Total Deaths"</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.names =</span> <span class="st">"Arial"</span>,</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.align =</span> <span class="st">"center"</span>,</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.border.top.width =</span> <span class="dv">2</span>,</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.border.bottom.width =</span> <span class="dv">2</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
-<div id="ntswwebybx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ntswwebybx table {
+<div id="rmqiyuqxmd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rmqiyuqxmd table {
   font-family: Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ntswwebybx thead, #ntswwebybx tbody, #ntswwebybx tfoot, #ntswwebybx tr, #ntswwebybx td, #ntswwebybx th {
+#rmqiyuqxmd thead, #rmqiyuqxmd tbody, #rmqiyuqxmd tfoot, #rmqiyuqxmd tr, #rmqiyuqxmd td, #rmqiyuqxmd th {
   border-style: none;
 }
 
-#ntswwebybx p {
+#rmqiyuqxmd p {
   margin: 0;
   padding: 0;
 }
 
-#ntswwebybx .gt_table {
+#rmqiyuqxmd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -248,12 +169,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#ntswwebybx .gt_caption {
+#rmqiyuqxmd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ntswwebybx .gt_title {
+#rmqiyuqxmd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -265,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#ntswwebybx .gt_subtitle {
+#rmqiyuqxmd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -277,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#ntswwebybx .gt_heading {
+#rmqiyuqxmd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -289,13 +210,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ntswwebybx .gt_bottom_border {
+#rmqiyuqxmd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ntswwebybx .gt_col_headings {
+#rmqiyuqxmd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -310,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ntswwebybx .gt_col_heading {
+#rmqiyuqxmd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -330,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ntswwebybx .gt_column_spanner_outer {
+#rmqiyuqxmd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -342,15 +263,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#ntswwebybx .gt_column_spanner_outer:first-child {
+#rmqiyuqxmd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ntswwebybx .gt_column_spanner_outer:last-child {
+#rmqiyuqxmd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ntswwebybx .gt_column_spanner {
+#rmqiyuqxmd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -362,11 +283,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#ntswwebybx .gt_spanner_row {
+#rmqiyuqxmd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ntswwebybx .gt_group_heading {
+#rmqiyuqxmd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -392,7 +313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#ntswwebybx .gt_empty_group_heading {
+#rmqiyuqxmd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -407,15 +328,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#ntswwebybx .gt_from_md > :first-child {
+#rmqiyuqxmd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ntswwebybx .gt_from_md > :last-child {
+#rmqiyuqxmd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ntswwebybx .gt_row {
+#rmqiyuqxmd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -434,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ntswwebybx .gt_stub {
+#rmqiyuqxmd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -447,7 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ntswwebybx .gt_stub_row_group {
+#rmqiyuqxmd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -461,15 +382,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#ntswwebybx .gt_row_group_first td {
+#rmqiyuqxmd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ntswwebybx .gt_row_group_first th {
+#rmqiyuqxmd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ntswwebybx .gt_summary_row {
+#rmqiyuqxmd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -479,16 +400,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ntswwebybx .gt_first_summary_row {
+#rmqiyuqxmd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ntswwebybx .gt_first_summary_row.thick {
+#rmqiyuqxmd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ntswwebybx .gt_last_summary_row {
+#rmqiyuqxmd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -498,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ntswwebybx .gt_grand_summary_row {
+#rmqiyuqxmd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -508,7 +429,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ntswwebybx .gt_first_grand_summary_row {
+#rmqiyuqxmd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -518,7 +439,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#ntswwebybx .gt_last_grand_summary_row_top {
+#rmqiyuqxmd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -528,11 +449,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ntswwebybx .gt_striped {
+#rmqiyuqxmd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ntswwebybx .gt_table_body {
+#rmqiyuqxmd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -541,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ntswwebybx .gt_footnotes {
+#rmqiyuqxmd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -555,7 +476,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ntswwebybx .gt_footnote {
+#rmqiyuqxmd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -564,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ntswwebybx .gt_sourcenotes {
+#rmqiyuqxmd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -578,7 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ntswwebybx .gt_sourcenote {
+#rmqiyuqxmd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -586,72 +507,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ntswwebybx .gt_left {
+#rmqiyuqxmd .gt_left {
   text-align: left;
 }
 
-#ntswwebybx .gt_center {
+#rmqiyuqxmd .gt_center {
   text-align: center;
 }
 
-#ntswwebybx .gt_right {
+#rmqiyuqxmd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ntswwebybx .gt_font_normal {
+#rmqiyuqxmd .gt_font_normal {
   font-weight: normal;
 }
 
-#ntswwebybx .gt_font_bold {
+#rmqiyuqxmd .gt_font_bold {
   font-weight: bold;
 }
 
-#ntswwebybx .gt_font_italic {
+#rmqiyuqxmd .gt_font_italic {
   font-style: italic;
 }
 
-#ntswwebybx .gt_super {
+#rmqiyuqxmd .gt_super {
   font-size: 65%;
 }
 
-#ntswwebybx .gt_footnote_marks {
+#rmqiyuqxmd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ntswwebybx .gt_asterisk {
+#rmqiyuqxmd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ntswwebybx .gt_indent_1 {
+#rmqiyuqxmd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ntswwebybx .gt_indent_2 {
+#rmqiyuqxmd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ntswwebybx .gt_indent_3 {
+#rmqiyuqxmd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ntswwebybx .gt_indent_4 {
+#rmqiyuqxmd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ntswwebybx .gt_indent_5 {
+#rmqiyuqxmd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ntswwebybx .katex-display {
+#rmqiyuqxmd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ntswwebybx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rmqiyuqxmd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -659,12 +580,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="4" class="gt_heading gt_title gt_font_normal">Shelter Outcomes by Year</th>
+<th colspan="5" class="gt_heading gt_title gt_font_normal">Shelter Outcomes by Year</th>
 </tr>
 <tr class="gt_heading even">
-<th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Total Intake, Adoptions, and Deaths</th>
+<th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Total Intake, Adoptions, and Deaths</th>
 </tr>
 <tr class="gt_col_headings header">
+<th id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
 <th id="year" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">year</th>
 <th id="Total_Intake" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Intake</th>
 <th id="Total_Adoptions" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Adoptions</th>
@@ -673,64 +595,81 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_right" headers="year">2015</td>
-<td class="gt_row gt_right" headers="Total_Intake">173,429</td>
-<td class="gt_row gt_right" headers="Total_Adoptions">106,388</td>
-<td class="gt_row gt_right" headers="Total_Deaths">2,393</td>
+<td id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_right" headers="stub_1_1 year">2015</td>
+<td class="gt_row gt_right" headers="stub_1_1 Total_Intake">173,429</td>
+<td class="gt_row gt_right" headers="stub_1_1 Total_Adoptions">106,388</td>
+<td class="gt_row gt_right" headers="stub_1_1 Total_Deaths">2,393</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="year">2016</td>
-<td class="gt_row gt_right" headers="Total_Intake">171,630</td>
-<td class="gt_row gt_right" headers="Total_Adoptions">104,936</td>
-<td class="gt_row gt_right" headers="Total_Deaths">2,093</td>
+<td id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_right" headers="stub_1_2 year">2016</td>
+<td class="gt_row gt_right" headers="stub_1_2 Total_Intake">171,630</td>
+<td class="gt_row gt_right" headers="stub_1_2 Total_Adoptions">104,936</td>
+<td class="gt_row gt_right" headers="stub_1_2 Total_Deaths">2,093</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="year">2017</td>
-<td class="gt_row gt_right" headers="Total_Intake">167,485</td>
-<td class="gt_row gt_right" headers="Total_Adoptions">103,969</td>
-<td class="gt_row gt_right" headers="Total_Deaths">1,991</td>
+<td id="stub_1_3" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_right" headers="stub_1_3 year">2017</td>
+<td class="gt_row gt_right" headers="stub_1_3 Total_Intake">167,485</td>
+<td class="gt_row gt_right" headers="stub_1_3 Total_Adoptions">103,969</td>
+<td class="gt_row gt_right" headers="stub_1_3 Total_Deaths">1,991</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="year">2018</td>
-<td class="gt_row gt_right" headers="Total_Intake">184,293</td>
-<td class="gt_row gt_right" headers="Total_Adoptions">115,019</td>
-<td class="gt_row gt_right" headers="Total_Deaths">2,323</td>
+<td id="stub_1_4" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_right" headers="stub_1_4 year">2018</td>
+<td class="gt_row gt_right" headers="stub_1_4 Total_Intake">184,293</td>
+<td class="gt_row gt_right" headers="stub_1_4 Total_Adoptions">115,019</td>
+<td class="gt_row gt_right" headers="stub_1_4 Total_Deaths">2,323</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="year">2019</td>
-<td class="gt_row gt_right" headers="Total_Intake">179,694</td>
-<td class="gt_row gt_right" headers="Total_Adoptions">118,446</td>
-<td class="gt_row gt_right" headers="Total_Deaths">2,317</td>
+<td id="stub_1_5" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_right" headers="stub_1_5 year">2019</td>
+<td class="gt_row gt_right" headers="stub_1_5 Total_Intake">179,694</td>
+<td class="gt_row gt_right" headers="stub_1_5 Total_Adoptions">118,446</td>
+<td class="gt_row gt_right" headers="stub_1_5 Total_Deaths">2,317</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="year">2020</td>
-<td class="gt_row gt_right" headers="Total_Intake">165,755</td>
-<td class="gt_row gt_right" headers="Total_Adoptions">117,655</td>
-<td class="gt_row gt_right" headers="Total_Deaths">1,808</td>
+<td id="stub_1_6" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_right" headers="stub_1_6 year">2020</td>
+<td class="gt_row gt_right" headers="stub_1_6 Total_Intake">165,755</td>
+<td class="gt_row gt_right" headers="stub_1_6 Total_Adoptions">117,655</td>
+<td class="gt_row gt_right" headers="stub_1_6 Total_Deaths">1,808</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="year">2021</td>
-<td class="gt_row gt_right" headers="Total_Intake">167,375</td>
-<td class="gt_row gt_right" headers="Total_Adoptions">115,980</td>
-<td class="gt_row gt_right" headers="Total_Deaths">1,878</td>
+<td id="stub_1_7" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_right" headers="stub_1_7 year">2021</td>
+<td class="gt_row gt_right" headers="stub_1_7 Total_Intake">167,375</td>
+<td class="gt_row gt_right" headers="stub_1_7 Total_Adoptions">115,980</td>
+<td class="gt_row gt_right" headers="stub_1_7 Total_Deaths">1,878</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="year">2022</td>
-<td class="gt_row gt_right" headers="Total_Intake">182,873</td>
-<td class="gt_row gt_right" headers="Total_Adoptions">124,924</td>
-<td class="gt_row gt_right" headers="Total_Deaths">2,052</td>
+<td id="stub_1_8" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_right" headers="stub_1_8 year">2022</td>
+<td class="gt_row gt_right" headers="stub_1_8 Total_Intake">182,873</td>
+<td class="gt_row gt_right" headers="stub_1_8 Total_Adoptions">124,924</td>
+<td class="gt_row gt_right" headers="stub_1_8 Total_Deaths">2,052</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="year">2023</td>
-<td class="gt_row gt_right" headers="Total_Intake">172,987</td>
-<td class="gt_row gt_right" headers="Total_Adoptions">114,964</td>
-<td class="gt_row gt_right" headers="Total_Deaths">2,056</td>
+<td id="stub_1_9" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_right" headers="stub_1_9 year">2023</td>
+<td class="gt_row gt_right" headers="stub_1_9 Total_Intake">172,987</td>
+<td class="gt_row gt_right" headers="stub_1_9 Total_Adoptions">114,964</td>
+<td class="gt_row gt_right" headers="stub_1_9 Total_Deaths">2,056</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="year">2024</td>
-<td class="gt_row gt_right" headers="Total_Intake">175,893</td>
-<td class="gt_row gt_right" headers="Total_Adoptions">113,917</td>
-<td class="gt_row gt_right" headers="Total_Deaths">1,891</td>
+<td id="stub_1_10" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_right" headers="stub_1_10 year">2024</td>
+<td class="gt_row gt_right" headers="stub_1_10 Total_Intake">175,893</td>
+<td class="gt_row gt_right" headers="stub_1_10 Total_Adoptions">113,917</td>
+<td class="gt_row gt_right" headers="stub_1_10 Total_Deaths">1,891</td>
+</tr>
+<tr class="odd">
+<td id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" data-quarto-table-cell-role="th" scope="row">Total</td>
+<td class="gt_row gt_right gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 year">—</td>
+<td class="gt_row gt_right gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 Total_Intake">1,741,414</td>
+<td class="gt_row gt_right gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 Total_Adoptions">1,136,198</td>
+<td class="gt_row gt_right gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 Total_Deaths">20,802</td>
 </tr>
 </tbody>
 </table>
@@ -749,49 +688,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Are Colorado shelters absorbing regional transfers without sacrificing local pets?</p></li>
 </ol>
 <p>By visualizing both absolute counts and percentages of total intake over time, we can better understand trends, system capacity, and the impact of transfers on shelter outcomes.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">tab 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">tab 2</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aggregate by year</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_yearly <span class="ot">&lt;-</span> df0 <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_transfers =</span> <span class="fu">sum</span>(intake_out_of_state_transfer, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_negative =</span> <span class="fu">sum</span>(negative_outcomes, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(year)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Then calculate indexed values</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>df_indexed <span class="ot">&lt;-</span> df_yearly <span class="sc">%&gt;%</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">transfers_indexed =</span> (total_transfers <span class="sc">/</span> <span class="fu">first</span>(total_transfers)) <span class="sc">*</span> <span class="dv">100</span>,</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">negative_indexed =</span> (total_negative <span class="sc">/</span> <span class="fu">first</span>(total_negative)) <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_indexed, <span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> transfers_indexed, <span class="at">color =</span> <span class="st">"Transfers"</span>), <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> negative_indexed, <span class="at">color =</span> <span class="st">"Negative Outcomes"</span>), </span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="fl">1.2</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> transfers_indexed, <span class="at">color =</span> <span class="st">"Transfers"</span>), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> negative_indexed, <span class="at">color =</span> <span class="st">"Negative Outcomes"</span>), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Transfers"</span> <span class="ot">=</span> <span class="st">"#2E8B57"</span>, <span class="st">"Negative Outcomes"</span> <span class="ot">=</span> <span class="st">"#DC143C"</span>)) <span class="sc">+</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Growth Trends: Transfers vs. Negative Outcomes"</span>,</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Indexed to First Year = 100"</span>,</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Index (First Year = 100)"</span>,</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="cn">NULL</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">unique</span>(df_indexed<span class="sc">$</span>year)) <span class="sc">+</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray40"</span>)</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -800,29 +701,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate correlation</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cor_value <span class="ot">&lt;-</span> <span class="fu">cor</span>(df0<span class="sc">$</span>intake_out_of_state_transfer, df0<span class="sc">$</span>negative_outcomes, <span class="at">use =</span> <span class="st">"complete.obs"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df0, <span class="fu">aes</span>(<span class="at">x =</span> intake_out_of_state_transfer, <span class="at">y =</span> negative_outcomes)) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> year), <span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"navy"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"#fee5d9"</span>, <span class="at">high =</span> <span class="st">"#a50f15"</span>) <span class="sc">+</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relationship Between Transfers and Negative Outcomes"</span>,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">sprintf</span>(<span class="st">"Correlation: r = %.3f"</span>, cor_value),</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Out-of-State Transfers"</span>,</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Negative Outcomes"</span>,</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Year"</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray40"</span>)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -831,6 +712,1111 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</section>
+<section id="adoption-trends-over-time" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="adoption-trends-over-time"><span class="header-section-number">2.4</span> Adoption Trends Over Time</h2>
+<p>Adoption represents the single largest pathway out of shelters for animals, making it the cornerstone of successful shelter operations. This section examines whether Colorado’s adoption programs are keeping pace with intake growth, and identifies periods where external factors—economic conditions, public health crises, or targeted campaigns—may have influenced adoption rates.</p>
+<p><strong>Key questions explored:</strong></p>
+<ol type="1">
+<li>Are adoption numbers growing, declining, or remaining stable over time?</li>
+<li>Is adoption growth keeping pace with increases in shelter intake?</li>
+<li>What external factors correlate with spikes or drops in adoption rates?</li>
+<li>Are there opportunities to strengthen adoption programs based on historical patterns?</li>
+</ol>
+<p>By analyzing both absolute adoption numbers and adoption rates (as a percentage of total intake), we can assess system health and identify periods requiring targeted intervention through marketing campaigns, fee-waived events, or expanded foster networks.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Total Adoptions (Raw Counts)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Adoption Rate (% of Intake)</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Analysis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="return-to-owner-rto-rates" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="return-to-owner-rto-rates"><span class="header-section-number">2.5</span> Return-to-Owner (RTO) Rates</h2>
+<p>Return-to-Owner (RTO) rates represent the percentage of stray animals successfully reunited with their owners after entering the shelter system. These rates are a critical measure of how well identification, lost-and-found systems, and community outreach efforts are working to reconnect pets with their families.</p>
+<p><strong>Key Findings</strong></p>
+<p>The analysis compares RTO trends for dogs and cats from 2015 to 2024.</p>
+<p><em>1.Dogs consistently have much higher RTO rates than cats</em> Over the past decade, approximately 60–70% of stray dogs were returned to their owners each year, while only 10–15% of stray cats were reunited.</p>
+<p><em>2.The gap remains wide and persistent</em> The “RTO Gap” chart shows dogs outperforming cats by roughly 50–60 percentage points each year. While dog reunification rates have remained stable, cat reunifications show little improvement despite minor year-to-year fluctuations.</p>
+<p><em>3.Small fluctuations likely reflect local program efforts</em> Slight increases in certain years (e.g., 2018–2019) could be linked to targeted microchipping drives or community education campaigns, but these effects appear temporary or limited in scope.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">RTO by Year</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">RTO Gap</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Summary Statistics</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Analysis_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Analysis_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div id="uomqrkvzuh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uomqrkvzuh table {
+  font-family: Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#uomqrkvzuh thead, #uomqrkvzuh tbody, #uomqrkvzuh tfoot, #uomqrkvzuh tr, #uomqrkvzuh td, #uomqrkvzuh th {
+  border-style: none;
+}
+
+#uomqrkvzuh p {
+  margin: 0;
+  padding: 0;
+}
+
+#uomqrkvzuh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#uomqrkvzuh .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#uomqrkvzuh .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#uomqrkvzuh .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#uomqrkvzuh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#uomqrkvzuh .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#uomqrkvzuh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#uomqrkvzuh .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#uomqrkvzuh .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#uomqrkvzuh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#uomqrkvzuh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#uomqrkvzuh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#uomqrkvzuh .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#uomqrkvzuh .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#uomqrkvzuh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#uomqrkvzuh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#uomqrkvzuh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#uomqrkvzuh .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#uomqrkvzuh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uomqrkvzuh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#uomqrkvzuh .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#uomqrkvzuh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#uomqrkvzuh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uomqrkvzuh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#uomqrkvzuh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#uomqrkvzuh .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#uomqrkvzuh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uomqrkvzuh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#uomqrkvzuh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#uomqrkvzuh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#uomqrkvzuh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#uomqrkvzuh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#uomqrkvzuh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uomqrkvzuh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#uomqrkvzuh .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uomqrkvzuh .gt_left {
+  text-align: left;
+}
+
+#uomqrkvzuh .gt_center {
+  text-align: center;
+}
+
+#uomqrkvzuh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#uomqrkvzuh .gt_font_normal {
+  font-weight: normal;
+}
+
+#uomqrkvzuh .gt_font_bold {
+  font-weight: bold;
+}
+
+#uomqrkvzuh .gt_font_italic {
+  font-style: italic;
+}
+
+#uomqrkvzuh .gt_super {
+  font-size: 65%;
+}
+
+#uomqrkvzuh .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#uomqrkvzuh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#uomqrkvzuh .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#uomqrkvzuh .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#uomqrkvzuh .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#uomqrkvzuh .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#uomqrkvzuh .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#uomqrkvzuh .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#uomqrkvzuh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="9" class="gt_heading gt_title gt_font_normal">Return-to-Owner Performance Summary</th>
+</tr>
+<tr class="gt_heading even">
+<th colspan="9" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Analysis Period: 2015-2024</th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="animal_category" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Species</th>
+<th id="Average-RTO-Rate-(%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Average RTO Rate (%)</th>
+<th id="First-Year-Rate-(%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">First Year Rate (%)</th>
+<th id="Most-Recent-Rate-(%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Most Recent Rate (%)</th>
+<th id="Overall-Change-(pp)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Overall Change (pp)</th>
+<th id="Best-Year" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Best Year</th>
+<th id="Peak-Rate-(%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Peak Rate (%)</th>
+<th id="Total-Animals-Returned" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Animals Returned</th>
+<th id="Total-Strays" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total Strays</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="animal_category" style="background-color: #FFEBEE">cat</td>
+<td class="gt_row gt_right" headers="Average RTO Rate (%)" style="background-color: #FFEBEE">12.2</td>
+<td class="gt_row gt_right" headers="First Year Rate (%)" style="background-color: #FFEBEE">9.5</td>
+<td class="gt_row gt_right" headers="Most Recent Rate (%)" style="background-color: #FFEBEE">13.2</td>
+<td class="gt_row gt_right" headers="Overall Change (pp)" style="background-color: #FFEBEE">3.7</td>
+<td class="gt_row gt_right" headers="Best Year" style="background-color: #FFEBEE">2023</td>
+<td class="gt_row gt_right" headers="Peak Rate (%)" style="background-color: #FFEBEE">14.5</td>
+<td class="gt_row gt_right" headers="Total Animals Returned" style="background-color: #FFEBEE">31,309</td>
+<td class="gt_row gt_right" headers="Total Strays" style="background-color: #FFEBEE">256,721</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="animal_category" style="background-color: #E3F2FD">dog</td>
+<td class="gt_row gt_right" headers="Average RTO Rate (%)" style="background-color: #E3F2FD">66.1</td>
+<td class="gt_row gt_right" headers="First Year Rate (%)" style="background-color: #E3F2FD">63.2</td>
+<td class="gt_row gt_right" headers="Most Recent Rate (%)" style="background-color: #E3F2FD">61.7</td>
+<td class="gt_row gt_right" headers="Overall Change (pp)" style="background-color: #E3F2FD">−1.6</td>
+<td class="gt_row gt_right" headers="Best Year" style="background-color: #E3F2FD">2019</td>
+<td class="gt_row gt_right" headers="Peak Rate (%)" style="background-color: #E3F2FD">72.4</td>
+<td class="gt_row gt_right" headers="Total Animals Returned" style="background-color: #E3F2FD">222,215</td>
+<td class="gt_row gt_right" headers="Total Strays" style="background-color: #E3F2FD">336,386</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="intake-categories-shifts-over-time" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="intake-categories-shifts-over-time"><span class="header-section-number">2.6</span> Intake Categories &amp; Shifts Over Time</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Intake composition over time</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Owner Relinquishments Trend</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Summary Table</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Analysis_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Analysis_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div id="pmutwyqfaq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pmutwyqfaq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#pmutwyqfaq thead, #pmutwyqfaq tbody, #pmutwyqfaq tfoot, #pmutwyqfaq tr, #pmutwyqfaq td, #pmutwyqfaq th {
+  border-style: none;
+}
+
+#pmutwyqfaq p {
+  margin: 0;
+  padding: 0;
+}
+
+#pmutwyqfaq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #BEBEBE;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #BEBEBE;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#pmutwyqfaq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#pmutwyqfaq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#pmutwyqfaq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#pmutwyqfaq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pmutwyqfaq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pmutwyqfaq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pmutwyqfaq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#pmutwyqfaq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#pmutwyqfaq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#pmutwyqfaq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#pmutwyqfaq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#pmutwyqfaq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#pmutwyqfaq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#pmutwyqfaq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#pmutwyqfaq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#pmutwyqfaq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#pmutwyqfaq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#pmutwyqfaq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pmutwyqfaq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#pmutwyqfaq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#pmutwyqfaq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#pmutwyqfaq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pmutwyqfaq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#pmutwyqfaq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#pmutwyqfaq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pmutwyqfaq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pmutwyqfaq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#pmutwyqfaq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pmutwyqfaq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#pmutwyqfaq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pmutwyqfaq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pmutwyqfaq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pmutwyqfaq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pmutwyqfaq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pmutwyqfaq .gt_left {
+  text-align: left;
+}
+
+#pmutwyqfaq .gt_center {
+  text-align: center;
+}
+
+#pmutwyqfaq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#pmutwyqfaq .gt_font_normal {
+  font-weight: normal;
+}
+
+#pmutwyqfaq .gt_font_bold {
+  font-weight: bold;
+}
+
+#pmutwyqfaq .gt_font_italic {
+  font-style: italic;
+}
+
+#pmutwyqfaq .gt_super {
+  font-size: 65%;
+}
+
+#pmutwyqfaq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#pmutwyqfaq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#pmutwyqfaq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#pmutwyqfaq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#pmutwyqfaq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#pmutwyqfaq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#pmutwyqfaq .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#pmutwyqfaq .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#pmutwyqfaq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border">Average Yearly Change in Intake by Category</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="Category" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Intake Category</th>
+<th id="Avg_Change" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Average Yearly Change (%)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Category">Other</td>
+<td class="gt_row gt_right" headers="Avg_Change">4.00%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Category">In_State_Transfers</td>
+<td class="gt_row gt_right" headers="Avg_Change">3.00%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Category">Owner_Relinquished</td>
+<td class="gt_row gt_right" headers="Avg_Change">1.00%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Category">Stray</td>
+<td class="gt_row gt_right" headers="Avg_Change">0.00%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Category">Out_of_State_Transfers</td>
+<td class="gt_row gt_right" headers="Avg_Change">−1.00%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="positive-outcome-pathways" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="positive-outcome-pathways"><span class="header-section-number">2.7</span> Positive Outcome Pathways</h2>
 </section>
 </section>
 
