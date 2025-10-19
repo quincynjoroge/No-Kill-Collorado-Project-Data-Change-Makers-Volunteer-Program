@@ -1,6 +1,5 @@
 ---
-title: "Colorado Shelter Trends: Multi-Year Data Analysis"
-author: "Your Name"
+author: "Quincy Njoroge"
 date: "`r Sys.Date()`"
 format:
   html:
@@ -10,19 +9,32 @@ format:
     theme: cosmo
     number-sections: true
 execute:
-  echo: true
+  echo: false
   warning: false
   message: false
 ---
 
-# Introduction
 
--   Purpose of this analysis\
--   Data sources and time period covered\
--   Key questions:
-    -   Are transfers affecting negative outcomes?
-    -   Are adoptions and RTOs keeping pace with intake?
-    -   Where are the biggest regional differences?
+<div style="display:flex; align-items:center; justify-content:space-between;">
+  <img src="NKC_COlogoWeb.jpg" alt="Logo" style="height:80px; margin-right:20px;">
+  <h1 style="margin:0;">Colorado Shelter Trends: Multi-Year Data Analysis</h1>
+</div>
+
+# About the Project
+
+Every year, hundreds of animal shelters and rescues across Colorado open their doors to thousands of pets in need. Behind each of these numbers lies a story of compassion, survival, and the ongoing effort to create a future where every healthy and treatable animal has the chance to live. No Kill Colorado stands at the heart of this mission.
+
+As a nonprofit animal welfare advocacy organization, No Kill Colorado is dedicated to driving systemic change through advocacy, education, and data-driven reform. Rather than operating as a shelter, it works to transform how the entire shelter system performs helping communities, policymakers, and organizations adopt humane, lifesaving practices inspired by the No Kill Equation.
+
+To strengthen this mission, the organization launched the **Data for Paws project** an initiative designed to turn raw shelter data from 2016 to 2024 into meaningful insights. This project transforms data into visual stories that shed light on shelter performance, highlight progress, and reveal opportunities for further improvement.
+
+Through this analysis, No Kill Colorado aims to:
+
+1. Communicate key trends and metrics that influence animal welfare outcomes.
+
+2. Increase the organization’s visibility as a leader in data-driven advocacy.
+
+3. Equip policymakers, journalists, and the public with transparent, actionable information.
 
 # Data Overview
 
@@ -77,12 +89,20 @@ df0 %>%
     Total_Adoptions = "Total Adoptions",
     Total_Deaths = "Total Deaths"
   ) %>%
+  summary_rows(
+    groups = NULL,
+    columns = vars(Total_Intake, Total_Adoptions, Total_Deaths),
+    fns = list(Total = ~sum(.x, na.rm = TRUE)),
+    formatter = fmt_number,
+    decimals = 0
+  ) %>%
   tab_options(
     table.font.names = "Arial",
     heading.align = "center",
     table.border.top.width = 2,
     table.border.bottom.width = 2
   )
+
 ```
 
 ## Transfers vs. Negative Outcomes in Colorado Shelters
