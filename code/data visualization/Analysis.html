@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Quincy Njoroge">
-<meta name="dcterms.date" content="2025-10-19">
+<meta name="dcterms.date" content="2025-10-21">
 
 <title>analysis</title>
 <style>
@@ -35,6 +35,30 @@ ul.task-list li input[type="checkbox"] {
 <script src="Analysis_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Analysis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Analysis_files/libs/bootstrap/bootstrap-32162a2fca7cb0439643f2faaab1edf3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<style>
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+h1, h2, h3, h4, h5 {
+  color: #26397E;
+  font-family: 'Montserrat', sans-serif;
+}
+/* Tab styling */
+.panel-tabset .nav-tabs .nav-link {
+  background-color: #293B7B;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+.panel-tabset .nav-tabs .nav-link.active {
+  background-color: #5668AD;
+  font-weight: bold;
+}
+.panel-tabset .nav-tabs .nav-link:hover {
+  background-color: #7082C6;
+}
+</style>
 
 
 </head>
@@ -47,16 +71,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#about-the-project" id="toc-about-the-project" class="nav-link active" data-scroll-target="#about-the-project"><span class="header-section-number">1</span> About the Project</a></li>
-  <li><a href="#data-overview" id="toc-data-overview" class="nav-link" data-scroll-target="#data-overview"><span class="header-section-number">2</span> Data Overview</a>
+  <li><a href="#about-the-project" id="toc-about-the-project" class="nav-link active" data-scroll-target="#about-the-project">About the Project</a></li>
+  <li><a href="#data-overview" id="toc-data-overview" class="nav-link" data-scroll-target="#data-overview">Data Overview</a>
   <ul class="collapse">
-  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">2.1</span> Data Description</a></li>
-  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">2.2</span> Summary Statistics</a></li>
-  <li><a href="#transfers-vs.-negative-outcomes-in-colorado-shelters" id="toc-transfers-vs.-negative-outcomes-in-colorado-shelters" class="nav-link" data-scroll-target="#transfers-vs.-negative-outcomes-in-colorado-shelters"><span class="header-section-number">2.3</span> Transfers vs.&nbsp;Negative Outcomes in Colorado Shelters</a></li>
-  <li><a href="#adoption-trends-over-time" id="toc-adoption-trends-over-time" class="nav-link" data-scroll-target="#adoption-trends-over-time"><span class="header-section-number">2.4</span> Adoption Trends Over Time</a></li>
-  <li><a href="#return-to-owner-rto-rates" id="toc-return-to-owner-rto-rates" class="nav-link" data-scroll-target="#return-to-owner-rto-rates"><span class="header-section-number">2.5</span> Return-to-Owner (RTO) Rates</a></li>
-  <li><a href="#intake-categories-shifts-over-time" id="toc-intake-categories-shifts-over-time" class="nav-link" data-scroll-target="#intake-categories-shifts-over-time"><span class="header-section-number">2.6</span> Intake Categories &amp; Shifts Over Time</a></li>
-  <li><a href="#positive-outcome-pathways" id="toc-positive-outcome-pathways" class="nav-link" data-scroll-target="#positive-outcome-pathways"><span class="header-section-number">2.7</span> Positive Outcome Pathways</a></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description">Data Description</a></li>
+  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics">Summary Statistics</a></li>
+  <li><a href="#transfers-vs.-negative-outcomes-in-colorado-shelters" id="toc-transfers-vs.-negative-outcomes-in-colorado-shelters" class="nav-link" data-scroll-target="#transfers-vs.-negative-outcomes-in-colorado-shelters">1. Transfers vs.&nbsp;Negative Outcomes in Colorado Shelters</a></li>
+  <li><a href="#adoption-trends-over-time" id="toc-adoption-trends-over-time" class="nav-link" data-scroll-target="#adoption-trends-over-time">2. Adoption Trends Over Time</a></li>
+  <li><a href="#return-to-owner-rto-rates" id="toc-return-to-owner-rto-rates" class="nav-link" data-scroll-target="#return-to-owner-rto-rates">3. Return-to-Owner (RTO) Rates</a></li>
+  <li><a href="#intake-categories-shifts-over-time" id="toc-intake-categories-shifts-over-time" class="nav-link" data-scroll-target="#intake-categories-shifts-over-time">4. Intake Categories &amp; Shifts Over Time</a></li>
+  <li><a href="#positive-outcome-pathways" id="toc-positive-outcome-pathways" class="nav-link" data-scroll-target="#positive-outcome-pathways">5. Positive Outcome Pathways</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -81,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 19, 2025</p>
+      <p class="date">October 21, 2025</p>
     </div>
   </div>
   
@@ -99,8 +123,8 @@ ul.task-list li input[type="checkbox"] {
 Colorado Shelter Trends: Multi-Year Data Analysis
 </h1>
 </div>
-<section id="about-the-project" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> About the Project</h1>
+<section id="about-the-project" class="level1">
+<h1>About the Project</h1>
 <p>Every year, hundreds of animal shelters and rescues across Colorado open their doors to thousands of pets in need. Behind each of these numbers lies a story of compassion, survival, and the ongoing effort to create a future where every healthy and treatable animal has the chance to live. No Kill Colorado stands at the heart of this mission.</p>
 <p>As a nonprofit animal welfare advocacy organization, No Kill Colorado is dedicated to driving systemic change through advocacy, education, and data-driven reform. Rather than operating as a shelter, it works to transform how the entire shelter system performs helping communities, policymakers, and organizations adopt humane, lifesaving practices inspired by the No Kill Equation.</p>
 <p>To strengthen this mission, the organization launched the <strong>Data for Paws project</strong> an initiative designed to turn raw shelter data from 2016 to 2024 into meaningful insights. This project transforms data into visual stories that shed light on shelter performance, highlight progress, and reveal opportunities for further improvement.</p>
@@ -111,39 +135,39 @@ Colorado Shelter Trends: Multi-Year Data Analysis
 <li><p>Equip policymakers, journalists, and the public with transparent, actionable information.</p></li>
 </ol>
 </section>
-<section id="data-overview" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Data Overview</h1>
-<section id="data-description" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="data-description"><span class="header-section-number">2.1</span> Data Description</h2>
+<section id="data-overview" class="level1">
+<h1>Data Overview</h1>
+<section id="data-description" class="level2">
+<h2 class="anchored" data-anchor-id="data-description">Data Description</h2>
 <ul>
 <li>Overview of data fields (intake, outcomes, transfers, etc.)</li>
 <li>Data cleaning and preprocessing steps</li>
 </ul>
 </section>
-<section id="summary-statistics" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">2.2</span> Summary Statistics</h2>
+<section id="summary-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h2>
 <ul>
 <li>Total intakes, adoptions, and outcomes by year</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="rmqiyuqxmd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rmqiyuqxmd table {
+<div id="ntbhlyafvy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ntbhlyafvy table {
   font-family: Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rmqiyuqxmd thead, #rmqiyuqxmd tbody, #rmqiyuqxmd tfoot, #rmqiyuqxmd tr, #rmqiyuqxmd td, #rmqiyuqxmd th {
+#ntbhlyafvy thead, #ntbhlyafvy tbody, #ntbhlyafvy tfoot, #ntbhlyafvy tr, #ntbhlyafvy td, #ntbhlyafvy th {
   border-style: none;
 }
 
-#rmqiyuqxmd p {
+#ntbhlyafvy p {
   margin: 0;
   padding: 0;
 }
 
-#rmqiyuqxmd .gt_table {
+#ntbhlyafvy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -169,12 +193,12 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-left-color: #D3D3D3;
 }
 
-#rmqiyuqxmd .gt_caption {
+#ntbhlyafvy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rmqiyuqxmd .gt_title {
+#ntbhlyafvy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -186,7 +210,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-width: 0;
 }
 
-#rmqiyuqxmd .gt_subtitle {
+#ntbhlyafvy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -198,7 +222,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-top-width: 0;
 }
 
-#rmqiyuqxmd .gt_heading {
+#ntbhlyafvy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -210,13 +234,13 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#rmqiyuqxmd .gt_bottom_border {
+#ntbhlyafvy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rmqiyuqxmd .gt_col_headings {
+#ntbhlyafvy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -231,7 +255,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#rmqiyuqxmd .gt_col_heading {
+#ntbhlyafvy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -251,7 +275,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   overflow-x: hidden;
 }
 
-#rmqiyuqxmd .gt_column_spanner_outer {
+#ntbhlyafvy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -263,15 +287,15 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 4px;
 }
 
-#rmqiyuqxmd .gt_column_spanner_outer:first-child {
+#ntbhlyafvy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rmqiyuqxmd .gt_column_spanner_outer:last-child {
+#ntbhlyafvy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rmqiyuqxmd .gt_column_spanner {
+#ntbhlyafvy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -283,11 +307,11 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   width: 100%;
 }
 
-#rmqiyuqxmd .gt_spanner_row {
+#ntbhlyafvy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rmqiyuqxmd .gt_group_heading {
+#ntbhlyafvy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -313,7 +337,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   text-align: left;
 }
 
-#rmqiyuqxmd .gt_empty_group_heading {
+#ntbhlyafvy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -328,15 +352,15 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   vertical-align: middle;
 }
 
-#rmqiyuqxmd .gt_from_md > :first-child {
+#ntbhlyafvy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rmqiyuqxmd .gt_from_md > :last-child {
+#ntbhlyafvy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rmqiyuqxmd .gt_row {
+#ntbhlyafvy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -355,7 +379,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   overflow-x: hidden;
 }
 
-#rmqiyuqxmd .gt_stub {
+#ntbhlyafvy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -368,7 +392,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#rmqiyuqxmd .gt_stub_row_group {
+#ntbhlyafvy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -382,15 +406,15 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   vertical-align: top;
 }
 
-#rmqiyuqxmd .gt_row_group_first td {
+#ntbhlyafvy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rmqiyuqxmd .gt_row_group_first th {
+#ntbhlyafvy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rmqiyuqxmd .gt_summary_row {
+#ntbhlyafvy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -400,16 +424,16 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#rmqiyuqxmd .gt_first_summary_row {
+#ntbhlyafvy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rmqiyuqxmd .gt_first_summary_row.thick {
+#ntbhlyafvy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rmqiyuqxmd .gt_last_summary_row {
+#ntbhlyafvy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -419,7 +443,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#rmqiyuqxmd .gt_grand_summary_row {
+#ntbhlyafvy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -429,7 +453,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#rmqiyuqxmd .gt_first_grand_summary_row {
+#ntbhlyafvy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -439,7 +463,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-top-color: #D3D3D3;
 }
 
-#rmqiyuqxmd .gt_last_grand_summary_row_top {
+#ntbhlyafvy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -449,11 +473,11 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#rmqiyuqxmd .gt_striped {
+#ntbhlyafvy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rmqiyuqxmd .gt_table_body {
+#ntbhlyafvy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -462,7 +486,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#rmqiyuqxmd .gt_footnotes {
+#ntbhlyafvy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -476,7 +500,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#rmqiyuqxmd .gt_footnote {
+#ntbhlyafvy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -485,7 +509,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#rmqiyuqxmd .gt_sourcenotes {
+#ntbhlyafvy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -499,7 +523,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#rmqiyuqxmd .gt_sourcenote {
+#ntbhlyafvy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -507,72 +531,72 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#rmqiyuqxmd .gt_left {
+#ntbhlyafvy .gt_left {
   text-align: left;
 }
 
-#rmqiyuqxmd .gt_center {
+#ntbhlyafvy .gt_center {
   text-align: center;
 }
 
-#rmqiyuqxmd .gt_right {
+#ntbhlyafvy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rmqiyuqxmd .gt_font_normal {
+#ntbhlyafvy .gt_font_normal {
   font-weight: normal;
 }
 
-#rmqiyuqxmd .gt_font_bold {
+#ntbhlyafvy .gt_font_bold {
   font-weight: bold;
 }
 
-#rmqiyuqxmd .gt_font_italic {
+#ntbhlyafvy .gt_font_italic {
   font-style: italic;
 }
 
-#rmqiyuqxmd .gt_super {
+#ntbhlyafvy .gt_super {
   font-size: 65%;
 }
 
-#rmqiyuqxmd .gt_footnote_marks {
+#ntbhlyafvy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rmqiyuqxmd .gt_asterisk {
+#ntbhlyafvy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rmqiyuqxmd .gt_indent_1 {
+#ntbhlyafvy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rmqiyuqxmd .gt_indent_2 {
+#ntbhlyafvy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rmqiyuqxmd .gt_indent_3 {
+#ntbhlyafvy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rmqiyuqxmd .gt_indent_4 {
+#ntbhlyafvy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rmqiyuqxmd .gt_indent_5 {
+#ntbhlyafvy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rmqiyuqxmd .katex-display {
+#ntbhlyafvy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rmqiyuqxmd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ntbhlyafvy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -678,18 +702,26 @@ Colorado Shelter Trends: Multi-Year Data Analysis
 </div>
 </div>
 </section>
-<section id="transfers-vs.-negative-outcomes-in-colorado-shelters" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="transfers-vs.-negative-outcomes-in-colorado-shelters"><span class="header-section-number">2.3</span> Transfers vs.&nbsp;Negative Outcomes in Colorado Shelters</h2>
+<section id="transfers-vs.-negative-outcomes-in-colorado-shelters" class="level2">
+<h2 class="anchored" data-anchor-id="transfers-vs.-negative-outcomes-in-colorado-shelters">1. Transfers vs.&nbsp;Negative Outcomes in Colorado Shelters</h2>
 <p>This analysis compares the number of pets transferred into Colorado shelters from other states to the number of pets who do not leave shelters alive (euthanasia, died, or missing).</p>
-<p><strong>Key questions explored:</strong></p>
+<section id="key-questions-explored" class="level5">
+<h5 class="anchored" data-anchor-id="key-questions-explored"><u> <strong>Key questions explored:</strong> </u></h5>
 <ol type="1">
 <li><p>Are transfers outpacing local lifesaving capacity?</p></li>
 <li><p>Do increases in transfers correlate with increases in negative outcomes?</p></li>
 <li><p>Are Colorado shelters absorbing regional transfers without sacrificing local pets?</p></li>
 </ol>
 <p>By visualizing both absolute counts and percentages of total intake over time, we can better understand trends, system capacity, and the impact of transfers on shelter outcomes.</p>
+</section>
+<section id="findings-interpretation" class="level5">
+<h5 class="anchored" data-anchor-id="findings-interpretation"><u> <strong>Findings &amp; Interpretation</strong> </u></h5>
+<p>The relationship between out-of-state transfers and negative outcomes in Colorado shelters appears weak, as indicated by the <strong>low correlation coefficient (r = 0.156)</strong>. This suggests that higher numbers of transfers are not strongly associated with an increase in euthanasia, deaths, or missing animals. In other words, the data does not show that transfers directly drive negative outcomes.</p>
+<p>Looking at the trend over time, transfers steadily increased from 2015 through 2020, reaching their peak in 2020, before showing a sharp decline between 2020 and 2024. In contrast, negative outcomes declined consistently from 2015 to 2020, suggesting that shelters were able to absorb rising transfer volumes without compromising lifesaving performance. However, after 2020, <strong>negative outcomes began to rise again, even as transfers decreased</strong>.</p>
+<p>This inverse pattern implies that recent increases in negative outcomes are <strong>unlikely to be driven by incoming transfers</strong>. Instead, they may reflect other pressures on the shelter system after 2020, such as reduced staffing, funding constraints, or pandemic-related operational challenges.</p>
+<p>Overall, the data suggests that <strong>Colorado shelters have historically maintained sufficient capacity to handle transfers from other states without increasing deaths</strong>. The recent uptick in negative outcomes appears more linked to <strong>systemic or contextual factors rather than transfer volume</strong>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">tab 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">tab 2</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Trends Over Time</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Relationship Between Transfers and Negative Outcomes</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
@@ -716,17 +748,70 @@ Colorado Shelter Trends: Multi-Year Data Analysis
 </div>
 </div>
 </section>
-<section id="adoption-trends-over-time" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="adoption-trends-over-time"><span class="header-section-number">2.4</span> Adoption Trends Over Time</h2>
-<p>Adoption represents the single largest pathway out of shelters for animals, making it the cornerstone of successful shelter operations. This section examines whether Colorado’s adoption programs are keeping pace with intake growth, and identifies periods where external factors—economic conditions, public health crises, or targeted campaigns—may have influenced adoption rates.</p>
-<p><strong>Key questions explored:</strong></p>
+</section>
+<section id="adoption-trends-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="adoption-trends-over-time">2. Adoption Trends Over Time</h2>
+<p><strong>Adoption</strong> represents the single largest pathway out of shelters for animals, making it the cornerstone of successful shelter operations. This section examines whether Colorado’s adoption programs are keeping pace with intake growth, and identifies periods where <strong>external factors</strong>—economic conditions, public health crises, or targeted campaigns—may have influenced adoption rates.</p>
+<hr>
+<section id="key-questions-explored-1" class="level5">
+<h5 class="anchored" data-anchor-id="key-questions-explored-1"><u> <strong>Key questions explored:</strong> </u></h5>
 <ol type="1">
 <li>Are adoption numbers growing, declining, or remaining stable over time?</li>
 <li>Is adoption growth keeping pace with increases in shelter intake?</li>
-<li>What external factors correlate with spikes or drops in adoption rates?</li>
+<li>What external factors correlate with spikes or drops in adoption rates?<br>
+</li>
 <li>Are there opportunities to strengthen adoption programs based on historical patterns?</li>
 </ol>
-<p>By analyzing both absolute adoption numbers and adoption rates (as a percentage of total intake), we can assess system health and identify periods requiring targeted intervention through marketing campaigns, fee-waived events, or expanded foster networks.</p>
+<p>By analyzing both <strong>absolute adoption numbers</strong> and <strong>adoption rates (as a percentage of total intake)</strong>, we can assess system health and identify periods requiring targeted intervention through marketing campaigns, fee-waived events, or expanded foster networks.</p>
+<hr>
+</section>
+<section id="findings-interpretation-1" class="level5">
+<h5 class="anchored" data-anchor-id="findings-interpretation-1"><u><strong>Findings &amp; Interpretation</strong></u></h5>
+<section id="a-divergence-between-volume-and-efficiency" class="level6">
+<h6 class="anchored" data-anchor-id="a-divergence-between-volume-and-efficiency"><strong>a) Divergence Between Volume and Efficiency</strong></h6>
+<p>From <strong>2017 to 2022</strong>, <strong>raw adoptions increased steadily from 104,000 to 125,000</strong>, a <strong>20% rise</strong>. However, <strong>adoption efficiency (% of intake) tells a different story</strong>: rising from <strong>62% (2015–2018) to 70% in 2020</strong>, then declining to <strong>65% in 2024</strong>.</p>
+<p><strong>Interpretation:</strong> While shelters adopted more animals in absolute terms, they became <strong>less efficient at converting intakes into adoptions after 2020</strong>. This divergence highlights that <strong>high adoption volume alone does not guarantee system effectiveness</strong>.</p>
+<hr>
+</section>
+<section id="b-the-2020-adoption-spike" class="level6">
+<h6 class="anchored" data-anchor-id="b-the-2020-adoption-spike"><strong>b) The 2020 Adoption Spike</strong></h6>
+<p>The <strong>2020 peak of 70% adoption rate</strong> coincides with the <strong>COVID-19 pandemic</strong>:</p>
+<ul>
+<li><strong>Increased time at home</strong> drove unprecedented demand for pets.<br>
+</li>
+<li><strong>Adoption rates spiked</strong> despite moderate raw intake (~118,000).<br>
+</li>
+<li>This spike appears <strong>temporary</strong>; efficiency declined after 2020 once adoption demand normalized.</li>
+</ul>
+<p><strong>Critical consideration:</strong> Shelters that <strong>expanded capacity or staffing based on 2020 performance</strong> may have struggled when adoption demand returned to baseline.</p>
+<hr>
+</section>
+<section id="c-2022-high-volume-falling-efficiency" class="level6">
+<h6 class="anchored" data-anchor-id="c-2022-high-volume-falling-efficiency"><strong>c) 2022: High Volume, Falling Efficiency</strong></h6>
+<p><strong>2022</strong> shows the <strong>highest raw adoptions ever (125,000)</strong> but a <strong>decline in adoption rate to 68.5%</strong>:</p>
+<ul>
+<li><strong>Intake grew faster than adoptions</strong>, likely due to post-pandemic pet surrenders or economic pressures.<br>
+</li>
+<li>The system successfully processed <strong>record adoption volume</strong> but <strong>couldn’t keep pace with intake growth</strong>, indicating <strong>underlying capacity limitations</strong>.</li>
+</ul>
+<hr>
+</section>
+<section id="d-20232024-signs-of-strain" class="level6">
+<h6 class="anchored" data-anchor-id="d-20232024-signs-of-strain"><strong>d) 2023–2024: Signs of Strain</strong></h6>
+<p>The most recent years show troubling trends:</p>
+<ul>
+<li><strong>Raw adoptions dropped 8%</strong> from the 2022 peak (125,000 → 114,000).<br>
+</li>
+<li><strong>Adoption rate fell to 65%</strong>, returning to pre-pandemic levels.</li>
+</ul>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>Possible demand-side contraction:</strong> economic headwinds, housing market pressures, or “adopter fatigue.”<br>
+</li>
+<li><strong>Potential supply-side challenges:</strong> longer stays, less appealing animal profiles.<br>
+</li>
+<li>The system is handling <strong>similar or higher intake volumes but with reduced efficiency</strong>, highlighting <strong>capacity and operational strain</strong>.</li>
+</ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Total Adoptions (Raw Counts)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Adoption Rate (% of Intake)</a></li></ul>
 <div class="tab-content nav-pills">
@@ -755,14 +840,19 @@ Colorado Shelter Trends: Multi-Year Data Analysis
 </div>
 </div>
 </section>
-<section id="return-to-owner-rto-rates" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="return-to-owner-rto-rates"><span class="header-section-number">2.5</span> Return-to-Owner (RTO) Rates</h2>
+</section>
+</section>
+<section id="return-to-owner-rto-rates" class="level2">
+<h2 class="anchored" data-anchor-id="return-to-owner-rto-rates">3. Return-to-Owner (RTO) Rates</h2>
 <p>Return-to-Owner (RTO) rates represent the percentage of stray animals successfully reunited with their owners after entering the shelter system. These rates are a critical measure of how well identification, lost-and-found systems, and community outreach efforts are working to reconnect pets with their families.</p>
-<p><strong>Key Findings</strong></p>
-<p>The analysis compares RTO trends for dogs and cats from 2015 to 2024.</p>
-<p><em>1.Dogs consistently have much higher RTO rates than cats</em> Over the past decade, approximately 60–70% of stray dogs were returned to their owners each year, while only 10–15% of stray cats were reunited.</p>
-<p><em>2.The gap remains wide and persistent</em> The “RTO Gap” chart shows dogs outperforming cats by roughly 50–60 percentage points each year. While dog reunification rates have remained stable, cat reunifications show little improvement despite minor year-to-year fluctuations.</p>
-<p><em>3.Small fluctuations likely reflect local program efforts</em> Slight increases in certain years (e.g., 2018–2019) could be linked to targeted microchipping drives or community education campaigns, but these effects appear temporary or limited in scope.</p>
+<section id="findings-interpretation-2" class="level5">
+<h5 class="anchored" data-anchor-id="findings-interpretation-2"><u><strong>Findings &amp; Interpretation</strong></u></h5>
+<p>Return-to-Owner (RTO) rates represent the <strong>percentage of stray animals successfully reunited with their owners</strong> after entering the shelter system. These rates are a <strong>critical measure</strong> of how well identification, lost-and-found systems, and community outreach efforts are working to reconnect pets with their families.</p>
+<p>The analysis compares RTO trends for dogs and cats from <strong>2015 to 2024</strong>.</p>
+<p><strong>Dogs consistently have much higher RTO rates than cats.</strong> Over the past decade, approximately <strong>60–70% of stray dogs</strong> were returned to their owners each year, while only <strong>10–15% of stray cats</strong> were reunited. The <strong>RTO Gap</strong> chart illustrates dogs outperforming cats by roughly <strong>50–60 percentage points</strong> each year.</p>
+<p>Between <strong>2015 and 2019</strong>, dog RTO rates trended slightly upward, suggesting that <strong>identification and reunification initiatives</strong> such as microchipping and lost-and-found platforms were gaining traction. However, from <strong>2020 onward</strong>, rates for dogs declined gradually, likely reflecting <strong>pandemic-related disruptions</strong>, including reduced shelter hours and slower reclaim processes.</p>
+<p>For cats, the trend remained <strong>largely flat</strong>, indicating <strong>limited progress</strong> despite possible increases in microchipping or public awareness. Small upticks in certain years (e.g., <strong>2018–2019</strong>) could reflect <strong>localized microchipping drives or education campaigns</strong>, though these effects appear <strong>temporary or limited in scope</strong>. This plateau highlights a persistent <strong>systemic challenge in feline reunification</strong>, possibly linked to lower microchip use, outdoor-living norms, and perceptions that stray cats are independent rather than lost.</p>
+<p>Overall, the data suggests that <strong>current interventions have effectively supported dog-owner reunifications</strong> but have <strong>not closed the gap for cats</strong>. Future efforts should focus on <strong>targeted cat identification programs, community outreach, and behavioral insights</strong> to improve feline RTO outcomes.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">RTO by Year</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">RTO Gap</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Summary Statistics</a></li></ul>
 <div class="tab-content nav-pills">
@@ -791,23 +881,23 @@ Colorado Shelter Trends: Multi-Year Data Analysis
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <div class="cell">
 <div class="cell-output-display">
-<div id="uomqrkvzuh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uomqrkvzuh table {
+<div id="gauezmukcd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gauezmukcd table {
   font-family: Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uomqrkvzuh thead, #uomqrkvzuh tbody, #uomqrkvzuh tfoot, #uomqrkvzuh tr, #uomqrkvzuh td, #uomqrkvzuh th {
+#gauezmukcd thead, #gauezmukcd tbody, #gauezmukcd tfoot, #gauezmukcd tr, #gauezmukcd td, #gauezmukcd th {
   border-style: none;
 }
 
-#uomqrkvzuh p {
+#gauezmukcd p {
   margin: 0;
   padding: 0;
 }
 
-#uomqrkvzuh .gt_table {
+#gauezmukcd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -833,12 +923,12 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-left-color: #D3D3D3;
 }
 
-#uomqrkvzuh .gt_caption {
+#gauezmukcd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uomqrkvzuh .gt_title {
+#gauezmukcd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -850,7 +940,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-width: 0;
 }
 
-#uomqrkvzuh .gt_subtitle {
+#gauezmukcd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -862,7 +952,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-top-width: 0;
 }
 
-#uomqrkvzuh .gt_heading {
+#gauezmukcd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -874,13 +964,13 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#uomqrkvzuh .gt_bottom_border {
+#gauezmukcd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uomqrkvzuh .gt_col_headings {
+#gauezmukcd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -895,7 +985,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#uomqrkvzuh .gt_col_heading {
+#gauezmukcd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -915,7 +1005,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   overflow-x: hidden;
 }
 
-#uomqrkvzuh .gt_column_spanner_outer {
+#gauezmukcd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -927,15 +1017,15 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 4px;
 }
 
-#uomqrkvzuh .gt_column_spanner_outer:first-child {
+#gauezmukcd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uomqrkvzuh .gt_column_spanner_outer:last-child {
+#gauezmukcd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uomqrkvzuh .gt_column_spanner {
+#gauezmukcd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -947,11 +1037,11 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   width: 100%;
 }
 
-#uomqrkvzuh .gt_spanner_row {
+#gauezmukcd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uomqrkvzuh .gt_group_heading {
+#gauezmukcd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -977,7 +1067,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   text-align: left;
 }
 
-#uomqrkvzuh .gt_empty_group_heading {
+#gauezmukcd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -992,15 +1082,15 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   vertical-align: middle;
 }
 
-#uomqrkvzuh .gt_from_md > :first-child {
+#gauezmukcd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uomqrkvzuh .gt_from_md > :last-child {
+#gauezmukcd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uomqrkvzuh .gt_row {
+#gauezmukcd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1019,7 +1109,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   overflow-x: hidden;
 }
 
-#uomqrkvzuh .gt_stub {
+#gauezmukcd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1032,7 +1122,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#uomqrkvzuh .gt_stub_row_group {
+#gauezmukcd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1046,15 +1136,15 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   vertical-align: top;
 }
 
-#uomqrkvzuh .gt_row_group_first td {
+#gauezmukcd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uomqrkvzuh .gt_row_group_first th {
+#gauezmukcd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uomqrkvzuh .gt_summary_row {
+#gauezmukcd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1064,16 +1154,16 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#uomqrkvzuh .gt_first_summary_row {
+#gauezmukcd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uomqrkvzuh .gt_first_summary_row.thick {
+#gauezmukcd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uomqrkvzuh .gt_last_summary_row {
+#gauezmukcd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1083,7 +1173,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#uomqrkvzuh .gt_grand_summary_row {
+#gauezmukcd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1093,7 +1183,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#uomqrkvzuh .gt_first_grand_summary_row {
+#gauezmukcd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1103,7 +1193,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-top-color: #D3D3D3;
 }
 
-#uomqrkvzuh .gt_last_grand_summary_row_top {
+#gauezmukcd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1113,11 +1203,11 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#uomqrkvzuh .gt_striped {
+#gauezmukcd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uomqrkvzuh .gt_table_body {
+#gauezmukcd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1126,7 +1216,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#uomqrkvzuh .gt_footnotes {
+#gauezmukcd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1140,7 +1230,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#uomqrkvzuh .gt_footnote {
+#gauezmukcd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1149,7 +1239,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#uomqrkvzuh .gt_sourcenotes {
+#gauezmukcd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1163,7 +1253,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#uomqrkvzuh .gt_sourcenote {
+#gauezmukcd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1171,72 +1261,72 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#uomqrkvzuh .gt_left {
+#gauezmukcd .gt_left {
   text-align: left;
 }
 
-#uomqrkvzuh .gt_center {
+#gauezmukcd .gt_center {
   text-align: center;
 }
 
-#uomqrkvzuh .gt_right {
+#gauezmukcd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uomqrkvzuh .gt_font_normal {
+#gauezmukcd .gt_font_normal {
   font-weight: normal;
 }
 
-#uomqrkvzuh .gt_font_bold {
+#gauezmukcd .gt_font_bold {
   font-weight: bold;
 }
 
-#uomqrkvzuh .gt_font_italic {
+#gauezmukcd .gt_font_italic {
   font-style: italic;
 }
 
-#uomqrkvzuh .gt_super {
+#gauezmukcd .gt_super {
   font-size: 65%;
 }
 
-#uomqrkvzuh .gt_footnote_marks {
+#gauezmukcd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uomqrkvzuh .gt_asterisk {
+#gauezmukcd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uomqrkvzuh .gt_indent_1 {
+#gauezmukcd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uomqrkvzuh .gt_indent_2 {
+#gauezmukcd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uomqrkvzuh .gt_indent_3 {
+#gauezmukcd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uomqrkvzuh .gt_indent_4 {
+#gauezmukcd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uomqrkvzuh .gt_indent_5 {
+#gauezmukcd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uomqrkvzuh .katex-display {
+#gauezmukcd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uomqrkvzuh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#gauezmukcd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1294,8 +1384,9 @@ Colorado Shelter Trends: Multi-Year Data Analysis
 </div>
 </div>
 </section>
-<section id="intake-categories-shifts-over-time" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="intake-categories-shifts-over-time"><span class="header-section-number">2.6</span> Intake Categories &amp; Shifts Over Time</h2>
+</section>
+<section id="intake-categories-shifts-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="intake-categories-shifts-over-time">4. Intake Categories &amp; Shifts Over Time</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Intake composition over time</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Owner Relinquishments Trend</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Summary Table</a></li></ul>
 <div class="tab-content nav-pills">
@@ -1324,23 +1415,23 @@ Colorado Shelter Trends: Multi-Year Data Analysis
 <div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <div class="cell">
 <div class="cell-output-display">
-<div id="pmutwyqfaq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pmutwyqfaq table {
+<div id="qblflrdpkb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qblflrdpkb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pmutwyqfaq thead, #pmutwyqfaq tbody, #pmutwyqfaq tfoot, #pmutwyqfaq tr, #pmutwyqfaq td, #pmutwyqfaq th {
+#qblflrdpkb thead, #qblflrdpkb tbody, #qblflrdpkb tfoot, #qblflrdpkb tr, #qblflrdpkb td, #qblflrdpkb th {
   border-style: none;
 }
 
-#pmutwyqfaq p {
+#qblflrdpkb p {
   margin: 0;
   padding: 0;
 }
 
-#pmutwyqfaq .gt_table {
+#qblflrdpkb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1366,12 +1457,12 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-left-color: #D3D3D3;
 }
 
-#pmutwyqfaq .gt_caption {
+#qblflrdpkb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pmutwyqfaq .gt_title {
+#qblflrdpkb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1383,7 +1474,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-width: 0;
 }
 
-#pmutwyqfaq .gt_subtitle {
+#qblflrdpkb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1395,7 +1486,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-top-width: 0;
 }
 
-#pmutwyqfaq .gt_heading {
+#qblflrdpkb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1407,13 +1498,13 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#pmutwyqfaq .gt_bottom_border {
+#qblflrdpkb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pmutwyqfaq .gt_col_headings {
+#qblflrdpkb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #D3D3D3;
@@ -1428,7 +1519,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#pmutwyqfaq .gt_col_heading {
+#qblflrdpkb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1448,7 +1539,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   overflow-x: hidden;
 }
 
-#pmutwyqfaq .gt_column_spanner_outer {
+#qblflrdpkb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1460,15 +1551,15 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 4px;
 }
 
-#pmutwyqfaq .gt_column_spanner_outer:first-child {
+#qblflrdpkb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pmutwyqfaq .gt_column_spanner_outer:last-child {
+#qblflrdpkb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pmutwyqfaq .gt_column_spanner {
+#qblflrdpkb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #D3D3D3;
@@ -1480,11 +1571,11 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   width: 100%;
 }
 
-#pmutwyqfaq .gt_spanner_row {
+#qblflrdpkb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pmutwyqfaq .gt_group_heading {
+#qblflrdpkb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1510,7 +1601,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   text-align: left;
 }
 
-#pmutwyqfaq .gt_empty_group_heading {
+#qblflrdpkb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1525,15 +1616,15 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   vertical-align: middle;
 }
 
-#pmutwyqfaq .gt_from_md > :first-child {
+#qblflrdpkb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pmutwyqfaq .gt_from_md > :last-child {
+#qblflrdpkb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pmutwyqfaq .gt_row {
+#qblflrdpkb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1552,7 +1643,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   overflow-x: hidden;
 }
 
-#pmutwyqfaq .gt_stub {
+#qblflrdpkb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1565,7 +1656,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#pmutwyqfaq .gt_stub_row_group {
+#qblflrdpkb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1579,15 +1670,15 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   vertical-align: top;
 }
 
-#pmutwyqfaq .gt_row_group_first td {
+#qblflrdpkb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pmutwyqfaq .gt_row_group_first th {
+#qblflrdpkb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pmutwyqfaq .gt_summary_row {
+#qblflrdpkb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1597,16 +1688,16 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#pmutwyqfaq .gt_first_summary_row {
+#qblflrdpkb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pmutwyqfaq .gt_first_summary_row.thick {
+#qblflrdpkb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pmutwyqfaq .gt_last_summary_row {
+#qblflrdpkb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1616,7 +1707,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#pmutwyqfaq .gt_grand_summary_row {
+#qblflrdpkb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1626,7 +1717,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#pmutwyqfaq .gt_first_grand_summary_row {
+#qblflrdpkb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1636,7 +1727,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-top-color: #D3D3D3;
 }
 
-#pmutwyqfaq .gt_last_grand_summary_row_top {
+#qblflrdpkb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1646,11 +1737,11 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#pmutwyqfaq .gt_striped {
+#qblflrdpkb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pmutwyqfaq .gt_table_body {
+#qblflrdpkb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1659,7 +1750,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-bottom-color: #D3D3D3;
 }
 
-#pmutwyqfaq .gt_footnotes {
+#qblflrdpkb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1673,7 +1764,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#pmutwyqfaq .gt_footnote {
+#qblflrdpkb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1682,7 +1773,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#pmutwyqfaq .gt_sourcenotes {
+#qblflrdpkb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1696,7 +1787,7 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   border-right-color: #D3D3D3;
 }
 
-#pmutwyqfaq .gt_sourcenote {
+#qblflrdpkb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1704,72 +1795,72 @@ Colorado Shelter Trends: Multi-Year Data Analysis
   padding-right: 5px;
 }
 
-#pmutwyqfaq .gt_left {
+#qblflrdpkb .gt_left {
   text-align: left;
 }
 
-#pmutwyqfaq .gt_center {
+#qblflrdpkb .gt_center {
   text-align: center;
 }
 
-#pmutwyqfaq .gt_right {
+#qblflrdpkb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pmutwyqfaq .gt_font_normal {
+#qblflrdpkb .gt_font_normal {
   font-weight: normal;
 }
 
-#pmutwyqfaq .gt_font_bold {
+#qblflrdpkb .gt_font_bold {
   font-weight: bold;
 }
 
-#pmutwyqfaq .gt_font_italic {
+#qblflrdpkb .gt_font_italic {
   font-style: italic;
 }
 
-#pmutwyqfaq .gt_super {
+#qblflrdpkb .gt_super {
   font-size: 65%;
 }
 
-#pmutwyqfaq .gt_footnote_marks {
+#qblflrdpkb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pmutwyqfaq .gt_asterisk {
+#qblflrdpkb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pmutwyqfaq .gt_indent_1 {
+#qblflrdpkb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pmutwyqfaq .gt_indent_2 {
+#qblflrdpkb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pmutwyqfaq .gt_indent_3 {
+#qblflrdpkb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pmutwyqfaq .gt_indent_4 {
+#qblflrdpkb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pmutwyqfaq .gt_indent_5 {
+#qblflrdpkb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pmutwyqfaq .katex-display {
+#qblflrdpkb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pmutwyqfaq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qblflrdpkb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1815,8 +1906,8 @@ Colorado Shelter Trends: Multi-Year Data Analysis
 </div>
 </div>
 </section>
-<section id="positive-outcome-pathways" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="positive-outcome-pathways"><span class="header-section-number">2.7</span> Positive Outcome Pathways</h2>
+<section id="positive-outcome-pathways" class="level2">
+<h2 class="anchored" data-anchor-id="positive-outcome-pathways">5. Positive Outcome Pathways</h2>
 </section>
 </section>
 
