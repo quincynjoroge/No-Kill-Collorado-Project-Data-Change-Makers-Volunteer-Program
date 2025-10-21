@@ -3,23 +3,43 @@ author: "Quincy Njoroge"
 date: "`r Sys.Date()`"
 format:
   html:
+    theme: cosmo
     toc: true
     toc-depth: 3
     code-fold: true
-    theme: cosmo
     number-sections: false
-    header-attrs:
-      h1: "style='color:black;'"
-      h2: "style='color:black;'"
-      h3: "style='color:black;'"
-      h4: "style='color:black;'"
-      h5: "style='color:black;'"
+header-includes:
+  - |
+    <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      background-color: #fff;
+    }
+    h1, h2, h3, h4, h5 {
+      color: #26397E;
+      font-family: 'Montserrat', sans-serif;
+    }
+    /* Tab styling */
+    .panel-tabset .nav-tabs .nav-link {
+      background-color: #293B7B;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .panel-tabset .nav-tabs .nav-link.active {
+      background-color: #5668AD;
+      font-weight: bold;
+    }
+    .panel-tabset .nav-tabs .nav-link:hover {
+      background-color: #7082C6;
+    }
+    </style>
+    
 execute:
   echo: false
   warning: false
   message: false
 ---
-
 
 <div style="display:flex; align-items:center; justify-content:space-between;">
   <img src="NKC_COlogoWeb.jpg" alt="Logo" style="height:80px; margin-right:20px;">
@@ -217,16 +237,64 @@ ggplot(df0, aes(x = intake_out_of_state_transfer, y = negative_outcomes)) +
 
 ## 2. Adoption Trends Over Time
 
-Adoption represents the single largest pathway out of shelters for animals, making it the cornerstone of successful shelter operations. This section examines whether Colorado's adoption programs are keeping pace with intake growth, and identifies periods where external factors—economic conditions, public health crises, or targeted campaigns—may have influenced adoption rates.
+**Adoption** represents the single largest pathway out of shelters for animals, making it the cornerstone of successful shelter operations. This section examines whether Colorado's adoption programs are keeping pace with intake growth, and identifies periods where **external factors**—economic conditions, public health crises, or targeted campaigns—may have influenced adoption rates.
 
-**Key questions explored:**
+---
+
+##### <u> **Key questions explored:** </u>
 
 1. Are adoption numbers growing, declining, or remaining stable over time?
 2. Is adoption growth keeping pace with increases in shelter intake?
-3. What external factors correlate with spikes or drops in adoption rates?
-4. Are there opportunities to strengthen adoption programs based on historical patterns?
+3. What external factors correlate with spikes or drops in adoption rates?  
+4. Are there opportunities to strengthen adoption programs based on historical patterns?  
 
-By analyzing both absolute adoption numbers and adoption rates (as a percentage of total intake), we can assess system health and identify periods requiring targeted intervention through marketing campaigns, fee-waived events, or expanded foster networks.
+By analyzing both **absolute adoption numbers** and **adoption rates (as a percentage of total intake)**, we can assess system health and identify periods requiring targeted intervention through marketing campaigns, fee-waived events, or expanded foster networks.
+
+---
+
+##### <u>**Findings & Interpretation**</u>
+
+###### **a) Divergence Between Volume and Efficiency**
+
+From **2017 to 2022**, **raw adoptions increased steadily from 104,000 to 125,000**, a **20% rise**. However, **adoption efficiency (% of intake) tells a different story**: rising from **62% (2015–2018) to 70% in 2020**, then declining to **65% in 2024**.
+
+**Interpretation:** While shelters adopted more animals in absolute terms, they became **less efficient at converting intakes into adoptions after 2020**. This divergence highlights that **high adoption volume alone does not guarantee system effectiveness**.
+
+---
+
+###### **b) The 2020 Adoption Spike**
+
+The **2020 peak of 70% adoption rate** coincides with the **COVID-19 pandemic**:
+
+- **Increased time at home** drove unprecedented demand for pets.  
+- **Adoption rates spiked** despite moderate raw intake (~118,000).  
+- This spike appears **temporary**; efficiency declined after 2020 once adoption demand normalized.
+
+**Critical consideration:** Shelters that **expanded capacity or staffing based on 2020 performance** may have struggled when adoption demand returned to baseline.
+
+---
+
+###### **c) 2022: High Volume, Falling Efficiency**
+
+**2022** shows the **highest raw adoptions ever (125,000)** but a **decline in adoption rate to 68.5%**:
+
+- **Intake grew faster than adoptions**, likely due to post-pandemic pet surrenders or economic pressures.  
+- The system successfully processed **record adoption volume** but **couldn’t keep pace with intake growth**, indicating **underlying capacity limitations**.
+
+---
+
+###### **d) 2023–2024: Signs of Strain**
+
+The most recent years show troubling trends:
+
+- **Raw adoptions dropped 8%** from the 2022 peak (125,000 → 114,000).  
+- **Adoption rate fell to 65%**, returning to pre-pandemic levels.
+
+**Interpretation:**
+
+- **Possible demand-side contraction:** economic headwinds, housing market pressures, or “adopter fatigue.”  
+- **Potential supply-side challenges:** longer stays, less appealing animal profiles.  
+- The system is handling **similar or higher intake volumes but with reduced efficiency**, highlighting **capacity and operational strain**.
 
 :::{.panel-tabset .nav-pills}
 
@@ -298,18 +366,20 @@ p2
 
 Return-to-Owner (RTO) rates represent the percentage of stray animals successfully reunited with their owners after entering the shelter system. These rates are a critical measure of how well identification, lost-and-found systems, and community outreach efforts are working to reconnect pets with their families.
 
-**Key Findings**
+##### <u>**Findings & Interpretation**</u>
 
-The analysis compares RTO trends for dogs and cats from 2015 to 2024.
+Return-to-Owner (RTO) rates represent the **percentage of stray animals successfully reunited with their owners** after entering the shelter system. These rates are a **critical measure** of how well identification, lost-and-found systems, and community outreach efforts are working to reconnect pets with their families.
 
-_1.Dogs consistently have much higher RTO rates than cats_
-Over the past decade, approximately 60–70% of stray dogs were returned to their owners each year, while only 10–15% of stray cats were reunited.
+The analysis compares RTO trends for dogs and cats from **2015 to 2024**.
 
-_2.The gap remains wide and persistent_
-The “RTO Gap” chart shows dogs outperforming cats by roughly 50–60 percentage points each year. While dog reunification rates have remained stable, cat reunifications show little improvement despite minor year-to-year fluctuations.
+**Dogs consistently have much higher RTO rates than cats.** Over the past decade, approximately **60–70% of stray dogs** were returned to their owners each year, while only **10–15% of stray cats** were reunited. The **RTO Gap** chart illustrates dogs outperforming cats by roughly **50–60 percentage points** each year.
 
-_3.Small fluctuations likely reflect local program efforts_
-Slight increases in certain years (e.g., 2018–2019) could be linked to targeted microchipping drives or community education campaigns, but these effects appear temporary or limited in scope.
+Between **2015 and 2019**, dog RTO rates trended slightly upward, suggesting that **identification and reunification initiatives** such as microchipping and lost-and-found platforms were gaining traction. However, from **2020 onward**, rates for dogs declined gradually, likely reflecting **pandemic-related disruptions**, including reduced shelter hours and slower reclaim processes.
+
+For cats, the trend remained **largely flat**, indicating **limited progress** despite possible increases in microchipping or public awareness. Small upticks in certain years (e.g., **2018–2019**) could reflect **localized microchipping drives or education campaigns**, though these effects appear **temporary or limited in scope**. This plateau highlights a persistent **systemic challenge in feline reunification**, possibly linked to lower microchip use, outdoor-living norms, and perceptions that stray cats are independent rather than lost.
+
+Overall, the data suggests that **current interventions have effectively supported dog-owner reunifications** but have **not closed the gap for cats**. Future efforts should focus on **targeted cat identification programs, community outreach, and behavioral insights** to improve feline RTO outcomes.
+
 
 :::{.panel-tabset .nav-pills}
 ## RTO by Year
