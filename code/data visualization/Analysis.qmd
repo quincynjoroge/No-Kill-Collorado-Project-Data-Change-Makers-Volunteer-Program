@@ -7,7 +7,13 @@ format:
     toc-depth: 3
     code-fold: true
     theme: cosmo
-    number-sections: true
+    number-sections: false
+    header-attrs:
+      h1: "style='color:black;'"
+      h2: "style='color:black;'"
+      h3: "style='color:black;'"
+      h4: "style='color:black;'"
+      h5: "style='color:black;'"
 execute:
   echo: false
   warning: false
@@ -105,11 +111,11 @@ df0 %>%
 
 ```
 
-## Transfers vs. Negative Outcomes in Colorado Shelters
+## 1. Transfers vs. Negative Outcomes in Colorado Shelters
 
 This analysis compares the number of pets transferred into Colorado shelters from other states to the number of pets who do not leave shelters alive (euthanasia, died, or missing).
 
-**Key questions explored:**
+##### <u> **Key questions explored:** </u>
 
 1. Are transfers outpacing local lifesaving capacity?
 
@@ -119,8 +125,20 @@ This analysis compares the number of pets transferred into Colorado shelters fro
 
 By visualizing both absolute counts and percentages of total intake over time, we can better understand trends, system capacity, and the impact of transfers on shelter outcomes.
 
+
+##### <u> **Findings & Interpretation** </u>
+
+The relationship between out-of-state transfers and negative outcomes in Colorado shelters appears weak, as indicated by the **low correlation coefficient (r = 0.156)**. This suggests that higher numbers of transfers are not strongly associated with an increase in euthanasia, deaths, or missing animals. In other words, the data does not show that transfers directly drive negative outcomes.
+
+Looking at the trend over time, transfers steadily increased from 2015 through 2020, reaching their peak in 2020, before showing a sharp decline between 2020 and 2024. In contrast, negative outcomes declined consistently from 2015 to 2020, suggesting that shelters were able to absorb rising transfer volumes without compromising lifesaving performance. However, after 2020, **negative outcomes began to rise again, even as transfers decreased**.
+
+This inverse pattern implies that recent increases in negative outcomes are **unlikely to be driven by incoming transfers**. Instead, they may reflect other pressures on the shelter system after 2020, such as reduced staffing, funding constraints, or pandemic-related operational challenges.
+
+Overall, the data suggests that **Colorado shelters have historically maintained sufficient capacity to handle transfers from other states without increasing deaths**. The recent uptick in negative outcomes appears more linked to **systemic or contextual factors rather than transfer volume**.
+
 :::{.panel-tabset .nav-pills}
-## tab 1
+## Trends Over Time
+
 ```{r}
 # aggregate by year
 df_yearly <- df0 %>%
@@ -164,19 +182,20 @@ ggplot(df_indexed, aes(x = year)) +
 ```
 
 
+## Relationship Between Transfers and Negative Outcomes
 
-
-
-
-## tab 2
 ```{r}
+
+
 # Calculate correlation
 cor_value <- cor(df0$intake_out_of_state_transfer, df0$negative_outcomes, use = "complete.obs")
 
 ggplot(df0, aes(x = intake_out_of_state_transfer, y = negative_outcomes)) +
   geom_point(aes(color = year), size = 4, alpha = 0.7) +
   geom_smooth(method = "lm", se = TRUE, color = "navy", alpha = 0.2) +
-  scale_color_gradient(low = "#fee5d9", high = "#a50f15") +
+  scale_color_gradient(low = "#fee5d9", 
+                       high = "#a50f15",
+                       breaks = seq(2015, 2024, 1)) +
   labs(
     title = "Relationship Between Transfers and Negative Outcomes",
     subtitle = sprintf("Correlation: r = %.3f", cor_value),
@@ -187,14 +206,16 @@ ggplot(df0, aes(x = intake_out_of_state_transfer, y = negative_outcomes)) +
   theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(face = "bold", hjust = 0.5),
-    plot.subtitle = element_text(hjust = 0.5, color = "gray40")
+    plot.subtitle = element_text(hjust = 0.5, color = "gray40"),
+    legend.key.height = unit(1.5, "cm"), 
+    legend.key.width = unit(0.5, "cm"), 
   )
 
 ```
 
 :::
 
-## Adoption Trends Over Time
+## 2. Adoption Trends Over Time
 
 Adoption represents the single largest pathway out of shelters for animals, making it the cornerstone of successful shelter operations. This section examines whether Colorado's adoption programs are keeping pace with intake growth, and identifies periods where external factors—economic conditions, public health crises, or targeted campaigns—may have influenced adoption rates.
 
@@ -273,7 +294,7 @@ p2
 
 :::
 
-## Return-to-Owner (RTO) Rates
+## 3. Return-to-Owner (RTO) Rates
 
 Return-to-Owner (RTO) rates represent the percentage of stray animals successfully reunited with their owners after entering the shelter system. These rates are a critical measure of how well identification, lost-and-found systems, and community outreach efforts are working to reconnect pets with their families.
 
@@ -438,7 +459,7 @@ summary_stats %>%
 :::
 
 
-## Intake Categories & Shifts Over Time
+## 4. Intake Categories & Shifts Over Time
 
 :::{.panel-tabset .nav-pills}
 
@@ -530,5 +551,5 @@ intake_summary %>%
 
 :::
 
-## Positive Outcome Pathways
+## 5. Positive Outcome Pathways
 
