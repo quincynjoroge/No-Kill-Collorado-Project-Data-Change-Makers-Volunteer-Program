@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+body {
+  background-color: pink !important;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif !important;
+  color: #333333 !important;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #F39C12 !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+a {
+  color: #27AE60 !important;
+}
+
+blockquote {
+  border-left: 4px solid #F39C12 !important;
+  padding-left: 12px !important;
+  color: #555555 !important;
+}
