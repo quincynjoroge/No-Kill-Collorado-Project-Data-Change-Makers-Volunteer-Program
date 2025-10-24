@@ -620,6 +620,3 @@ intake_summary %>%
 
 
 :::
-
-## 5. Positive Outcome Pathways
-
